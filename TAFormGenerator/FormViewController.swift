@@ -9,27 +9,86 @@
 import UIKit
 
 class FormViewController: UIViewController {
+    
+    var formBuilder: FormBuilder!
+    
+    // UI
+    
+    /// The scroll view containing the form. Instantiated in viewDidLoad()
+    private var scrollView: UIScrollView!
+    private lazy var formView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.purpleColor()
+        
+        return view
+    }()
+    /// Button always at the bottom of the of the form. For validating
+    private lazy var validateFormButton: UIButton = {
+        let button: UIButton   = UIButton.buttonWithType(.Custom) as! UIButton
+        button.backgroundColor = UIColor.redColor()
+        button.setTitle(NSLocalizedString("Confirm", comment: ""), forState: .Normal)
+        return button
+    }()
+    
+    
+    
+    // Layout related properties
+    
+    private var didSetupConstraints: Bool = false
+    // Margins within scrollView
+    let kFORM_MARGIN: CGFloat = 12
+    
+    
+    // MARK: - Lifecycle
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor.yellowColor()
+        view.addSubview(scrollView)
+        
+        scrollView.addSubview(formView)
+        scrollView.addSubview(validateFormButton)
+        
+        // Must be init after formView and scrollview
+        formBuilder = FormBuilder(formView: formView)
     }
+    
+    
+    // MARK: - Layout
+    
+    
+    override func updateViewConstraints() {
+        if (!didSetupConstraints) {
+            // ScrollView takes whole screen
+            scrollView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
+            
+            formView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: ALEdge.Bottom)
+            formView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: scrollView)
+            
+            // Validation btn sticks at the bottom and is has big as the scrollview minus the margins
+            validateFormButton.autoSetDimension(ALDimension.Width, toSize: CGRectGetWidth(view.frame) - kFORM_MARGIN * 2)
+            validateFormButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+            validateFormButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: kFORM_MARGIN)
+            validateFormButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: formView, withOffset: kFORM_MARGIN)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            didSetupConstraints = true
+        }
+        
+        super.updateViewConstraints()
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        println(scrollView.contentSize)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // MARK: - Form construction
+    
+    
+    
 }

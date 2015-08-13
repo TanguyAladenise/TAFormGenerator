@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E50A0D41B7C9CE40068C327 /* EmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0D31B7C9CE40068C327 /* EmailInput.swift */; };
+		5E50A0D61B7CC5B90068C327 /* SectionWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */; };
 		5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1761B7B754600A95590 /* AppDelegate.swift */; };
 		5EF4D1791B7B754600A95590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1781B7B754600A95590 /* ViewController.swift */; };
 		5EF4D17C1B7B754600A95590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17A1B7B754600A95590 /* Main.storyboard */; };
@@ -14,6 +16,10 @@
 		5EF4D1811B7B754600A95590 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17F1B7B754600A95590 /* LaunchScreen.xib */; };
 		5EF4D18D1B7B754600A95590 /* TAFormGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D18C1B7B754600A95590 /* TAFormGeneratorTests.swift */; };
 		5EF4D1971B7B7EDB00A95590 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */; };
+		5EF4D1991B7B888D00A95590 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1981B7B888D00A95590 /* Form.swift */; };
+		5EF4D19C1B7B94B100A95590 /* FormBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */; };
+		5EF4D19E1B7BADAF00A95590 /* InputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */; };
+		5EF4D1A01B7C829200A95590 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19F1B7C829200A95590 /* TextInput.swift */; };
 		6AD00279E9F22208A5F0E02F /* libPods-TAFormGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8BC98C421AA56CC5A52913E /* libPods-TAFormGenerator.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +36,8 @@
 /* Begin PBXFileReference section */
 		0F2B1665B1F769601AF2564C /* Pods-TAFormGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAFormGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TAFormGenerator/Pods-TAFormGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		3F1030B4483B2AAFE0209F16 /* Pods-TAFormGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAFormGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TAFormGenerator/Pods-TAFormGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+		5E50A0D31B7C9CE40068C327 /* EmailInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailInput.swift; sourceTree = "<group>"; };
+		5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionWrapperView.swift; sourceTree = "<group>"; };
 		5EF4D1711B7B754600A95590 /* TAFormGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAFormGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4D1751B7B754600A95590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4D1761B7B754600A95590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +49,11 @@
 		5EF4D18B1B7B754600A95590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4D18C1B7B754600A95590 /* TAFormGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFormGeneratorTests.swift; sourceTree = "<group>"; };
 		5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		5EF4D1981B7B888D00A95590 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		5EF4D19A1B7B8ABC00A95590 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBuilder.swift; sourceTree = "<group>"; };
+		5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputBuilder.swift; sourceTree = "<group>"; };
+		5EF4D19F1B7C829200A95590 /* TextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
 		A8BC98C421AA56CC5A52913E /* libPods-TAFormGenerator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAFormGenerator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,8 +109,15 @@
 			isa = PBXGroup;
 			children = (
 				5EF4D1761B7B754600A95590 /* AppDelegate.swift */,
+				5EF4D19A1B7B8ABC00A95590 /* BridgingHeader.h */,
 				5EF4D1781B7B754600A95590 /* ViewController.swift */,
 				5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */,
+				5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */,
+				5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */,
+				5EF4D1981B7B888D00A95590 /* Form.swift */,
+				5EF4D19F1B7C829200A95590 /* TextInput.swift */,
+				5E50A0D31B7C9CE40068C327 /* EmailInput.swift */,
+				5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */,
 				5EF4D17A1B7B754600A95590 /* Main.storyboard */,
 				5EF4D17D1B7B754600A95590 /* Images.xcassets */,
 				5EF4D17F1B7B754600A95590 /* LaunchScreen.xib */,
@@ -275,8 +295,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EF4D1971B7B7EDB00A95590 /* FormViewController.swift in Sources */,
+				5EF4D1991B7B888D00A95590 /* Form.swift in Sources */,
+				5EF4D19C1B7B94B100A95590 /* FormBuilder.swift in Sources */,
+				5E50A0D41B7C9CE40068C327 /* EmailInput.swift in Sources */,
+				5E50A0D61B7CC5B90068C327 /* SectionWrapperView.swift in Sources */,
 				5EF4D1791B7B754600A95590 /* ViewController.swift in Sources */,
+				5EF4D19E1B7BADAF00A95590 /* InputBuilder.swift in Sources */,
 				5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */,
+				5EF4D1A01B7C829200A95590 /* TextInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +436,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TAFormGenerator/BridgingHeader.h;
 			};
 			name = Debug;
 		};
@@ -422,6 +449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TAFormGenerator/BridgingHeader.h;
 			};
 			name = Release;
 		};
