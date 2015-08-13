@@ -16,7 +16,7 @@ enum InputStyle : Int {
     case TextTwitterField
     case TextEmailField
     case TextPhoneField
-    case TextPassword
+    case TextSecure
     case TextLocation
     case TextDisable
     case NumberField
@@ -34,8 +34,6 @@ enum InputStyle : Int {
 }
 
 
-
-
 class InputBuilder {
     
     class func textInputWithStyle(inputStyle: InputStyle, placeHolder: String? = nil) -> UIView {
@@ -43,6 +41,14 @@ class InputBuilder {
         switch inputStyle {
         case .TextEmailField:
             return EmailInput(placeholder: placeHolder)
+        case .TextTwitterField:
+            return TwitterInput(placeholder: placeHolder)
+        case .TextPhoneField:
+            return PhoneInput(placeholder: placeHolder)
+        case .TextSecure:
+            return SecureInput(placeholder: placeHolder)
+        case .NumberField:
+            return NumberInput(placeholder: placeHolder)
         default:
             return TextInput(placeholder: placeHolder)
         }
