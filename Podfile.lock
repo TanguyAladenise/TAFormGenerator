@@ -1,10 +1,13 @@
 PODS:
+  - IQKeyboardManager (3.2.4)
   - PureLayout (2.0.6)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - PureLayout
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
   PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
 
 COCOAPODS: 0.38.0.beta.2

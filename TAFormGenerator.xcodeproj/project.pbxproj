@@ -85,6 +85,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5E50A0D71B7CCA380068C327 /* Defaults Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				5EF4D19F1B7C829200A95590 /* TextInput.swift */,
+				5E50A0D31B7C9CE40068C327 /* EmailInput.swift */,
+			);
+			name = "Defaults Inputs";
+			sourceTree = "<group>";
+		};
 		5EF4D1681B7B754600A95590 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +123,9 @@
 				5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */,
 				5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */,
 				5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */,
-				5EF4D1981B7B888D00A95590 /* Form.swift */,
-				5EF4D19F1B7C829200A95590 /* TextInput.swift */,
-				5E50A0D31B7C9CE40068C327 /* EmailInput.swift */,
 				5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */,
+				5EF4D1981B7B888D00A95590 /* Form.swift */,
+				5E50A0D71B7CCA380068C327 /* Defaults Inputs */,
 				5EF4D17A1B7B754600A95590 /* Main.storyboard */,
 				5EF4D17D1B7B754600A95590 /* Images.xcassets */,
 				5EF4D17F1B7B754600A95590 /* LaunchScreen.xib */,

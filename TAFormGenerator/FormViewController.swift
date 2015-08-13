@@ -27,6 +27,7 @@ class FormViewController: UIViewController {
         let button: UIButton   = UIButton.buttonWithType(.Custom) as! UIButton
         button.backgroundColor = UIColor.redColor()
         button.setTitle(NSLocalizedString("Confirm", comment: ""), forState: .Normal)
+        button.addTarget(self, action: "validateButtonPressed", forControlEvents: .TouchUpInside)
         return button
     }()
     
@@ -47,7 +48,11 @@ class FormViewController: UIViewController {
         
         scrollView = UIScrollView()
         scrollView.backgroundColor = UIColor.yellowColor()
+        scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         view.addSubview(scrollView)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "endEditing:")
+        scrollView.addGestureRecognizer(tapGesture)
         
         scrollView.addSubview(formView)
         scrollView.addSubview(validateFormButton)
@@ -86,8 +91,13 @@ class FormViewController: UIViewController {
         println(scrollView.contentSize)
     }
     
-
-    // MARK: - Form construction
+    
+    // MARK: - UI Actions
+    
+    
+    func endEditing(gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     
     

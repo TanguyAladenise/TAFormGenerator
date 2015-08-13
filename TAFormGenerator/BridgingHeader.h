@@ -7,6 +7,8 @@
 //
 
 #import <PureLayout.h>
+#import <IQKeyboardManager.h>
+
 
 #ifndef TAFormGenerator_BridgingHeader_h
 #define TAFormGenerator_BridgingHeader_h

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextInput: UIView {
+class TextInput: UIView, UITextFieldDelegate {
 
     
     let textField: UITextField! = UITextField()
@@ -42,7 +42,12 @@ class TextInput: UIView {
         println("setup")
         
         addSubview(textField)
-        self.textField.backgroundColor = UIColor.blueColor()
+        self.textField.backgroundColor = UIColor.clearColor()
+        self.textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        self.textField.returnKeyType   = UIReturnKeyType.Done
+        self.textField.delegate        = self
+        
+        self.backgroundColor           = UIColor.whiteColor()
     }
     
     
@@ -52,7 +57,8 @@ class TextInput: UIView {
     override func updateConstraints() {
         if !didSetupConstraints {
             
-            textField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
+            autoSetDimension(ALDimension.Height, toSize: 50)
+            textField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15, 0, 15))
             
             didSetupConstraints = true
         }
@@ -60,4 +66,16 @@ class TextInput: UIView {
         super.updateConstraints()
     }
     
+    
+    // MARK: - Text field delegate
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField.returnKeyType == UIReturnKeyType.Done) {
+            textField.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
 }
