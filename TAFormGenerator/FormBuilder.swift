@@ -33,7 +33,6 @@ class FormBuilder {
     
     
     func addSection(sectionHeaderView: UIView, withID sectionID: String) {
-        
         if validateID(sectionID, inDictionary: form.formSubviews) {
             insertSectionView(sectionHeaderView, inView: formView)
             form.orderedSectionViews.append(sectionHeaderView)

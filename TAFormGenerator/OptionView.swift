@@ -97,7 +97,7 @@ class OptionView: UIView {
             autoSetDimension(ALDimension.Height, toSize: 35)
             autoSetDimension(.Width, toSize: 35, relation: NSLayoutRelation.GreaterThanOrEqual)
 
-            label.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 10, 0, 10))
+            label.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 5, 0, 5))
             
             didSetupConstraints = true
         }

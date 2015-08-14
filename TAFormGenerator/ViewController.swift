@@ -50,7 +50,9 @@ class ViewController: FormViewController {
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "testtestzadazda"), withID: "145", inSectionID: "Header3")
         formBuilder.addInput(InputBuilder.radioButtons("Size", options: ["XS", "S", "M", "L", "XL"]), withID: "radio", inSectionID: "Header3")
         formBuilder.addInput(InputBuilder.radioButtons("Gender", options: ["Male", "Female"]), withID: "gender", inSectionID: "Header3")
-
+        formBuilder.addInput(InputBuilder.radioButtons("DO YOU WISH TO BLAH BLAH THIS IS TWO LINES QUESTION THAT TAKES MORE SPACE", options: ["YES", "NO"]), withID: "question1", inSectionID: "Header3")
+        
+        formBuilder.addInput(InputBuilder.dropdownInput(placeholder: "Dropdown"), withID: "Dropdown", inSectionID: "Header3")
     }
     
 

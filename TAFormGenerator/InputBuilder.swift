@@ -62,4 +62,8 @@ class InputBuilder {
         return RadioButtonsInput(label: label, options: options)
     }
     
+    
+    class func dropdownInput(placeholder: String? = nil) -> DropdownInput {
+        return DropdownInput(placeholder: placeholder)
+    }
 }
