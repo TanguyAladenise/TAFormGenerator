@@ -18,7 +18,7 @@ class FormViewController: UIViewController {
     private var scrollView: UIScrollView!
     private lazy var formView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.purpleColor()
+        view.backgroundColor = UIColor.brownColor()
         
         return view
     }()
@@ -83,12 +83,6 @@ class FormViewController: UIViewController {
         }
         
         super.updateViewConstraints()
-    }
-    
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        println(scrollView.contentSize)
     }
     
     

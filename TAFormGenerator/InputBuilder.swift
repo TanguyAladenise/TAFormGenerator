@@ -17,9 +17,12 @@ enum InputStyle : Int {
     case TextEmailField
     case TextPhoneField
     case TextSecure
+    case NumberField
+ 
+    case RadioButtons
+    
     case TextLocation
     case TextDisable
-    case NumberField
     case DatePicker
     case DateTimePicker
     case SpeedPicker
@@ -53,6 +56,10 @@ class InputBuilder {
             return TextInput(placeholder: placeHolder)
         }
         
+    }
+    
+    class func radioButtons(label: String, options: [String]) -> RadioButtonsInput {
+        return RadioButtonsInput(label: label, options: options)
     }
     
 }

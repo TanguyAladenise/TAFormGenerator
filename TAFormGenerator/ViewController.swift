@@ -39,12 +39,7 @@ class ViewController: FormViewController {
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextSecure, placeHolder: "password"), withID: "nbbb", inSectionID: "Header2")
         
         formBuilder.addInput(InputBuilder.textInputWithStyle(.NumberField, placeHolder: "number"), withID: "vdx", inSectionID: "Header2")
-        formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "tete"), withID: "gr", inSectionID: "Header2")
-        formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "nbbb"), withID: "za", inSectionID: "Header2")
-        
-        formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "zaza"), withID: "hyt", inSectionID: "Header2")
-        formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "tete"), withID: "zds", inSectionID: "Header2")
-        formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "nbbb"), withID: "nbhtygfbb", inSectionID: "Header2")
+
         
         
         var inputs = [InputBuilder.textInputWithStyle(.TextField, placeHolder: "first"), InputBuilder.textInputWithStyle(.TextField, placeHolder: "second")]
@@ -53,8 +48,11 @@ class ViewController: FormViewController {
 
         formBuilder.addFloatingInputs(inputs, withMatchingIDs: ids, inSectionID: "Header3", atPositions: 0.75, 1)
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "testtestzadazda"), withID: "145", inSectionID: "Header3")
+        formBuilder.addInput(InputBuilder.radioButtons("Size", options: ["XS", "S", "M", "L", "XL"]), withID: "radio", inSectionID: "Header3")
+        formBuilder.addInput(InputBuilder.radioButtons("Gender", options: ["Male", "Female"]), withID: "gender", inSectionID: "Header3")
 
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

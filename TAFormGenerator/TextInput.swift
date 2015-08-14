@@ -12,7 +12,8 @@ class TextInput: UIView, UITextFieldDelegate {
 
     
     let textField: UITextField! = UITextField()
-    var border: UIView = UIView()
+    private var border: UIView = UIView()
+    
     var didSetupConstraints: Bool = false
 
     
@@ -39,8 +40,6 @@ class TextInput: UIView, UITextFieldDelegate {
     
     
     func setup() {
-        println("setup")
-        
         addSubview(textField)
         self.textField.backgroundColor = UIColor.clearColor()
         self.textField.clearButtonMode = UITextFieldViewMode.WhileEditing
