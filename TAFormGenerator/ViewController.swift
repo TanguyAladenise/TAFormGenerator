@@ -34,6 +34,7 @@ class ViewController: FormViewController {
         
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeHolder: "text"), withID: "text", inSectionID: "Header1")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextTwitterField, placeHolder: "twitter"), withID: "testtest", inSectionID: "Header1")
+        formBuilder.addInput(InputBuilder.dropdownInput(placeholder: "Dropdown"), withID: "Dropdown1", inSectionID: "Header1")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextEmailField, placeHolder: "email"), withID: "zaza", inSectionID: "Header2")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextPhoneField, placeHolder: "phone"), withID: "tete", inSectionID: "Header2")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextSecure, placeHolder: "password"), withID: "nbbb", inSectionID: "Header2")

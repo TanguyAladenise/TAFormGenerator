@@ -60,8 +60,9 @@ class TextInput: UIView, UITextFieldDelegate {
     override func updateConstraints() {
         if !didSetupConstraints {
             
-            autoSetDimension(ALDimension.Height, toSize: 50)
-            textField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15, 0, 15))
+            autoSetDimension(.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
+            textField.autoSetDimension(.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
+            textField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15, 0, 15), excludingEdge: .Bottom)
             
             border.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: border.superview)
             border.autoSetDimension(ALDimension.Height, toSize: 1)
