@@ -141,6 +141,13 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
             self.setImage(image)
         })
     }
+    
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.setImage(nil)
+        })
+    }
 
     
     // MARK: - Layout
