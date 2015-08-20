@@ -10,24 +10,28 @@ import UIKit
 
 class DropdownInput: TextInput, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    var options: [String] = [NSLocalizedString("None", comment: "No choice in a list"), "dzadz", "dsw", "vcx", "juy", "=m", "45", "dzwxwxxwadz", ]
+    var options: [String] = [NSLocalizedString("None", comment: "No choice in a list")]
     var menuWrapper: UIView?
     var picker: UIPickerView?
     
     var menuIsCollapsed: Bool = true
+    var menuHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Lifecycle
     
     
-    convenience init(dropdownOptions: [String]) {
+    convenience init(dropdownOptions: [String], placeholder: String? = nil) {
         self.init(frame: CGRectZero)
         
         self.options += dropdownOptions
+        self.textField.placeholder = placeholder
     }
 
     
     override func setup() {
         super.setup()
+        
+        self.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         let imageView           = UIImageView(image: UIImage(named: "icoAdd"))
         textField.rightView     = imageView
@@ -57,41 +61,42 @@ class DropdownInput: TextInput, UIPickerViewDataSource, UIPickerViewDelegate {
     func openMenu() {
         if menuWrapper == nil {
             createMenu()
+            self.insertSubview(menuWrapper!, atIndex: 0)
+            menuWrapper!.autoPinEdgeToSuperviewEdge(.Leading)
+            menuWrapper!.autoPinEdgeToSuperviewEdge(.Trailing)
+            menuHeightConstraint = menuWrapper!.autoSetDimension(.Height, toSize: 0)
+            textField.superview!.removeConstraint(textFieldBottomConstraint)
+            menuWrapper!.autoPinEdge(.Top, toEdge: .Bottom, ofView: textField)
+            menuWrapper!.autoPinEdgeToSuperviewEdge(.Bottom)
         }
         
         if menuIsCollapsed {
-            self.addSubview(menuWrapper!)
-            menuWrapper!.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Top)
-            menuWrapper!.autoPinEdge(.Top, toEdge: .Bottom, ofView: textField)
-            menuWrapper!.autoSetDimension(.Height, toSize: 160)
+           
+            menuHeightConstraint.constant = 0
             layoutIfNeeded()
-            menuWrapper!.alpha = 0
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.menuWrapper!.alpha = 1
+            menuHeightConstraint.constant = 160
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.layoutIfNeeded()
             }, completion: { (completion: Bool) -> Void in
                 self.menuIsCollapsed = false
             })
         }
-        
     }
     
     
     func closeMenu() {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.menuWrapper!.alpha = 0
-        }, completion: { (completion: Bool) -> Void in
-            self.menuWrapper!.removeFromSuperview()
-            self.menuIsCollapsed = true
-        })
+        menuHeightConstraint.constant = 0
+        self.layoutIfNeeded()
+        self.menuIsCollapsed = true
     }
     
     
     func createMenu() {
-        menuWrapper                  = UIView()
+        menuWrapper                  = UIView(forAutoLayout: ())
         menuWrapper!.backgroundColor = UIColor.whiteColor()
         menuWrapper!.clipsToBounds   = true
         
-        let picker        = UIPickerView()
+        let picker        = UIPickerView(forAutoLayout: ())
         picker.delegate   = self
         picker.dataSource = self
         menuWrapper!.addSubview(picker)
