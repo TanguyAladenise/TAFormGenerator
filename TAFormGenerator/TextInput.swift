@@ -16,6 +16,8 @@ class TextInput: UIView, UITextFieldDelegate {
     
     var didSetupConstraints: Bool = false
 
+    var textFieldTopConstraint: NSLayoutConstraint!
+    var textFieldBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Lifecycle
     
@@ -40,7 +42,7 @@ class TextInput: UIView, UITextFieldDelegate {
     
     
     func setup() {
-        addSubview(textField)
+        addSubview(self.textField)
         self.textField.backgroundColor = UIColor.clearColor()
         self.textField.clearButtonMode = UITextFieldViewMode.WhileEditing
         self.textField.returnKeyType   = UIReturnKeyType.Done
@@ -48,8 +50,8 @@ class TextInput: UIView, UITextFieldDelegate {
         
         self.backgroundColor           = UIColor.whiteColor()
         
-        border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
-        addSubview(border)
+        self.border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
+        addSubview(self.border)
     }
     
     
@@ -64,6 +66,11 @@ class TextInput: UIView, UITextFieldDelegate {
             textField.autoSetDimension(.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
             textField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15, 0, 15), excludingEdge: .Bottom)
             
+            textFieldTopConstraint    = textField.autoPinEdgeToSuperviewEdge(.Top)
+            textFieldBottomConstraint = textField.autoPinEdgeToSuperviewEdge(.Bottom)
+            textField.autoPinEdgeToSuperviewEdge(.Left, withInset: 15)
+            textField.autoPinEdgeToSuperviewEdge(.Right, withInset: 15)
+
             border.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: border.superview)
             border.autoSetDimension(ALDimension.Height, toSize: 1)
             border.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
