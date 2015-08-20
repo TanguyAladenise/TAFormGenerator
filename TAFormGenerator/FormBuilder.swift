@@ -127,6 +127,7 @@ class FormBuilder {
         return false
     }
     
+    
     // MARK: - Layout logic
     
     
@@ -148,6 +149,7 @@ class FormBuilder {
         
         inputView.autoPinEdgeToSuperviewEdge(ALEdge.Leading)
         inputView.autoPinEdgeToSuperviewEdge(ALEdge.Trailing)
+        sectionView.layoutIfNeeded()
         sectionView.bottomConstraint = inputView.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
     }
     
@@ -166,10 +168,9 @@ class FormBuilder {
                 inputView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: prevInput)
             } else {
                 inputView.autoPinEdge(ALEdge.Leading, toEdge: ALEdge.Trailing, ofView: prevInput)
-                inputView.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: prevInput)
+                inputView.autoPinEdge(.Top, toEdge: .Top, ofView: prevInput)
             }
         }
-        
 
 //        inputView.autoSetDimension(ALDimension.Width, toSize: size)
         inputView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: sectionView.superview, withMultiplier: multiplier)
@@ -178,7 +179,6 @@ class FormBuilder {
         }
         
         sectionView.bottomConstraint = inputView.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
-        
     }
     
     

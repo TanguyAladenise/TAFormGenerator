@@ -18,6 +18,7 @@ enum InputStyle : Int {
     case TextPhoneField
     case TextSecure
     case NumberField
+    case LinksField
  
     case RadioButtons
     
@@ -39,23 +40,21 @@ enum InputStyle : Int {
 
 class InputBuilder {
     
-    class func textInputWithStyle(inputStyle: InputStyle, placeHolder: String? = nil) -> UIView {
-        
+    class func textInputWithStyle(inputStyle: InputStyle, placeholder: String? = nil) -> UIView {
         switch inputStyle {
         case .TextEmailField:
-            return EmailInput(placeholder: placeHolder)
+            return EmailInput(placeholder: placeholder)
         case .TextTwitterField:
-            return TwitterInput(placeholder: placeHolder)
+            return TwitterInput(placeholder: placeholder)
         case .TextPhoneField:
-            return PhoneInput(placeholder: placeHolder)
+            return PhoneInput(placeholder: placeholder)
         case .TextSecure:
-            return SecureInput(placeholder: placeHolder)
+            return SecureInput(placeholder: placeholder)
         case .NumberField:
-            return NumberInput(placeholder: placeHolder)
+            return NumberInput(placeholder: placeholder)
         default:
-            return TextInput(placeholder: placeHolder)
+            return TextInput(placeholder: placeholder)
         }
-        
     }
     
     class func radioButtons(label: String, options: [String]) -> RadioButtonsInput {
@@ -63,7 +62,17 @@ class InputBuilder {
     }
     
     
-    class func dropdownInput(placeholder: String? = nil) -> DropdownInput {
-        return DropdownInput(placeholder: placeholder)
+    class func dropdownInput(options: [String], placeholder: String? = nil) -> DropdownInput {
+        return DropdownInput(dropdownOptions: options, placeholder: placeholder)
+    }
+    
+    
+    class func imageInput(label: String, target: UIViewController) -> ImageInput {
+        return ImageInput(label: label, target: target)
+    }
+    
+    
+    class func linksInput(placeholder: String, target: UIViewController) -> LinksInput {
+        return LinksInput(placeholder: placeholder, target: target)
     }
 }
