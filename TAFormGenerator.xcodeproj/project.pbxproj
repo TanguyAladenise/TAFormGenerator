@@ -19,6 +19,13 @@
 		5E50A0EC1B7E54860068C327 /* icoAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E50A0E91B7E54860068C327 /* icoAdd.png */; };
 		5E50A0ED1B7E54860068C327 /* icoAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E50A0EA1B7E54860068C327 /* icoAdd@2x.png */; };
 		5E50A0EE1B7E54860068C327 /* icoAdd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E50A0EB1B7E54860068C327 /* icoAdd@3x.png */; };
+		5E5F7C341B85D9ED00501545 /* ImageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C331B85D9ED00501545 /* ImageInput.swift */; };
+		5E5F7C381B860B8600501545 /* greenCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C351B860B8600501545 /* greenCheck.png */; };
+		5E5F7C391B860B8600501545 /* greenCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C361B860B8600501545 /* greenCheck@2x.png */; };
+		5E5F7C3A1B860B8600501545 /* greenCheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C371B860B8600501545 /* greenCheck@3x.png */; };
+		5E5F7C3E1B86270A00501545 /* LinksInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C3D1B86270A00501545 /* LinksInput.swift */; };
+		5E5F7C411B8632AC00501545 /* AddLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C3F1B8632AC00501545 /* AddLinkViewController.swift */; };
+		5E5F7C421B8632AC00501545 /* AddLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C401B8632AC00501545 /* AddLinkViewController.xib */; };
 		5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1761B7B754600A95590 /* AppDelegate.swift */; };
 		5EF4D1791B7B754600A95590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1781B7B754600A95590 /* ViewController.swift */; };
 		5EF4D17C1B7B754600A95590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17A1B7B754600A95590 /* Main.storyboard */; };
@@ -58,6 +65,13 @@
 		5E50A0E91B7E54860068C327 /* icoAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoAdd.png; sourceTree = "<group>"; };
 		5E50A0EA1B7E54860068C327 /* icoAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@2x.png"; sourceTree = "<group>"; };
 		5E50A0EB1B7E54860068C327 /* icoAdd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@3x.png"; sourceTree = "<group>"; };
+		5E5F7C331B85D9ED00501545 /* ImageInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInput.swift; sourceTree = "<group>"; };
+		5E5F7C351B860B8600501545 /* greenCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenCheck.png; sourceTree = "<group>"; };
+		5E5F7C361B860B8600501545 /* greenCheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenCheck@2x.png"; sourceTree = "<group>"; };
+		5E5F7C371B860B8600501545 /* greenCheck@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenCheck@3x.png"; sourceTree = "<group>"; };
+		5E5F7C3D1B86270A00501545 /* LinksInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksInput.swift; sourceTree = "<group>"; };
+		5E5F7C3F1B8632AC00501545 /* AddLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLinkViewController.swift; sourceTree = "<group>"; };
+		5E5F7C401B8632AC00501545 /* AddLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLinkViewController.xib; sourceTree = "<group>"; };
 		5EF4D1711B7B754600A95590 /* TAFormGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAFormGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4D1751B7B754600A95590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4D1761B7B754600A95590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				5E50A0E41B7DCE140068C327 /* TextFieldInputs */,
-				5E50A0E21B7DCC500068C327 /* RadioButtonsInput.swift */,
-				5E50A0E51B7DCE580068C327 /* OptionView.swift */,
+				5E5F7C321B85D83F00501545 /* RadioInput */,
+				5E5F7C331B85D9ED00501545 /* ImageInput.swift */,
 			);
 			name = "Defaults Inputs";
 			sourceTree = "<group>";
@@ -125,8 +139,20 @@
 				5E50A0DE1B7CF79D0068C327 /* SecureInput.swift */,
 				5E50A0E01B7CF7D90068C327 /* NumberInput.swift */,
 				5E50A0E71B7E52770068C327 /* DropdownInput.swift */,
+				5E5F7C3D1B86270A00501545 /* LinksInput.swift */,
+				5E5F7C3F1B8632AC00501545 /* AddLinkViewController.swift */,
+				5E5F7C401B8632AC00501545 /* AddLinkViewController.xib */,
 			);
 			name = TextFieldInputs;
+			sourceTree = "<group>";
+		};
+		5E5F7C321B85D83F00501545 /* RadioInput */ = {
+			isa = PBXGroup;
+			children = (
+				5E50A0E21B7DCC500068C327 /* RadioButtonsInput.swift */,
+				5E50A0E51B7DCE580068C327 /* OptionView.swift */,
+			);
+			name = RadioInput;
 			sourceTree = "<group>";
 		};
 		5EF4D1681B7B754600A95590 = {
@@ -152,6 +178,9 @@
 		5EF4D1731B7B754600A95590 /* TAFormGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				5E5F7C351B860B8600501545 /* greenCheck.png */,
+				5E5F7C361B860B8600501545 /* greenCheck@2x.png */,
+				5E5F7C371B860B8600501545 /* greenCheck@3x.png */,
 				5E50A0E91B7E54860068C327 /* icoAdd.png */,
 				5E50A0EA1B7E54860068C327 /* icoAdd@2x.png */,
 				5E50A0EB1B7E54860068C327 /* icoAdd@3x.png */,
@@ -287,10 +316,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5F7C3A1B860B8600501545 /* greenCheck@3x.png in Resources */,
 				5EF4D17C1B7B754600A95590 /* Main.storyboard in Resources */,
 				5E50A0EE1B7E54860068C327 /* icoAdd@3x.png in Resources */,
 				5E50A0EC1B7E54860068C327 /* icoAdd.png in Resources */,
+				5E5F7C421B8632AC00501545 /* AddLinkViewController.xib in Resources */,
 				5E50A0ED1B7E54860068C327 /* icoAdd@2x.png in Resources */,
+				5E5F7C381B860B8600501545 /* greenCheck.png in Resources */,
+				5E5F7C391B860B8600501545 /* greenCheck@2x.png in Resources */,
 				5EF4D1811B7B754600A95590 /* LaunchScreen.xib in Resources */,
 				5EF4D17E1B7B754600A95590 /* Images.xcassets in Resources */,
 			);
@@ -344,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EF4D1971B7B7EDB00A95590 /* FormViewController.swift in Sources */,
+				5E5F7C411B8632AC00501545 /* AddLinkViewController.swift in Sources */,
 				5EF4D1991B7B888D00A95590 /* Form.swift in Sources */,
 				5E50A0DD1B7CF76C0068C327 /* PhoneInput.swift in Sources */,
 				5EF4D19C1B7B94B100A95590 /* FormBuilder.swift in Sources */,
@@ -357,6 +391,8 @@
 				5E50A0E81B7E52770068C327 /* DropdownInput.swift in Sources */,
 				5EF4D19E1B7BADAF00A95590 /* InputBuilder.swift in Sources */,
 				5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */,
+				5E5F7C3E1B86270A00501545 /* LinksInput.swift in Sources */,
+				5E5F7C341B85D9ED00501545 /* ImageInput.swift in Sources */,
 				5E50A0E61B7DCE580068C327 /* OptionView.swift in Sources */,
 				5EF4D1A01B7C829200A95590 /* TextInput.swift in Sources */,
 			);
