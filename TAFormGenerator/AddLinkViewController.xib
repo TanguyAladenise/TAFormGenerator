@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLinkViewController" customModule="TAFormGenerator" customModuleProvider="target">
             <connections>
+                <outlet property="formWrapper" destination="gJp-M9-tWC" id="Jhi-bk-0Jk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,11 +45,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOY-Sf-yRD">
-                            <rect key="frame" x="552" y="24" width="36" height="30"/>
+                            <rect key="frame" x="558" y="24" width="30" height="30"/>
                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
-                            <state key="normal" title="Send">
+                            <state key="normal" title="Add">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="-1" eventType="touchUpInside" id="r4Z-Ek-S0G"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.23529411759999999" green="0.42352941179999998" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,11 +69,18 @@
                         <constraint firstItem="Lxx-Dj-ezz" firstAttribute="top" secondItem="xAs-vw-jcb" secondAttribute="top" constant="27" id="qwp-sy-MIC"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJp-M9-tWC">
+                    <rect key="frame" x="0.0" y="64" width="600" height="106"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="gJp-M9-tWC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0be-0a-j1K"/>
                 <constraint firstAttribute="trailing" secondItem="xAs-vw-jcb" secondAttribute="trailing" id="3Wu-vh-EXQ"/>
+                <constraint firstAttribute="trailing" secondItem="gJp-M9-tWC" secondAttribute="trailing" id="DTE-m5-CMb"/>
                 <constraint firstItem="xAs-vw-jcb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hst-Ni-nl7"/>
+                <constraint firstItem="gJp-M9-tWC" firstAttribute="top" secondItem="xAs-vw-jcb" secondAttribute="bottom" id="mN8-DZ-472"/>
                 <constraint firstItem="xAs-vw-jcb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="owz-CZ-Qri"/>
             </constraints>
         </view>

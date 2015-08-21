@@ -18,6 +18,7 @@ enum InputStyle : Int {
     case TextPhoneField
     case TextSecure
     case NumberField
+    case URLInput
     case LinksField
  
     case RadioButtons
@@ -63,7 +64,12 @@ class InputBuilder {
     
     
     class func dropdownInput(options: [String], placeholder: String? = nil) -> DropdownInput {
-        return DropdownInput(dropdownOptions: options, placeholder: placeholder)
+        return DropdownOptionsInput(dropdownOptions: options, placeholder: placeholder)
+    }
+    
+    
+    class func dateInput(datePickerMode: UIDatePickerMode, placeholder: String? = nil) -> DateInput {
+        return DateInput(datePickerMode: datePickerMode, placeholder: placeholder)
     }
     
     

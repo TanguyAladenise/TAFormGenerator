@@ -8,16 +8,22 @@
 
 import UIKit
 
-class TextInput: UIView, UITextFieldDelegate {
+protocol InputProtocol {
+    func inputValue() -> String?
+}
+
+
+class TextInput: UIView, InputProtocol, UITextFieldDelegate {
 
     
     let textField: UITextField! = UITextField()
-    private var border: UIView = UIView()
+    private var border: UIView  = UIView()
     
     var didSetupConstraints: Bool = false
 
     var textFieldTopConstraint: NSLayoutConstraint!
     var textFieldBottomConstraint: NSLayoutConstraint!
+    
     
     // MARK: - Lifecycle
     
@@ -55,6 +61,17 @@ class TextInput: UIView, UITextFieldDelegate {
     }
     
     
+    // MARK: - Protocol
+    
+    
+    func inputValue() -> String? {
+        if textField.text == "" {
+            return nil
+        } else {
+            return textField.text
+        }
+    }
+    
     
     // MARK: - Layout
     
@@ -64,7 +81,6 @@ class TextInput: UIView, UITextFieldDelegate {
             
             autoSetDimension(.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
             textField.autoSetDimension(.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
-            textField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15, 0, 15), excludingEdge: .Bottom)
             
             textFieldTopConstraint    = textField.autoPinEdgeToSuperviewEdge(.Top)
             textFieldBottomConstraint = textField.autoPinEdgeToSuperviewEdge(.Bottom)
@@ -73,7 +89,6 @@ class TextInput: UIView, UITextFieldDelegate {
 
             border.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: border.superview)
             border.autoSetDimension(ALDimension.Height, toSize: 1)
-            border.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
             border.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
             didSetupConstraints = true
         }

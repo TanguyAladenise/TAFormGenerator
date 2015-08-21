@@ -71,7 +71,9 @@ class ViewController: FormViewController {
         
         formBuilder.addInput(InputBuilder.imageInput("Image", target: self), withID: "image", inSectionID: "Header5")
         formBuilder.addInput(InputBuilder.linksInput("Add a link", target: self), withID: "links", inSectionID: "Header5")
-    
+        formBuilder.addInput(InputBuilder.dateInput(UIDatePickerMode.Date, placeholder: "Date"), withID: "Date", inSectionID: "Header5")
+        formBuilder.addInput(InputBuilder.dateInput(UIDatePickerMode.DateAndTime, placeholder: "DateAndTime"), withID: "DateAndTime", inSectionID: "Header5")
+
     }
     
     deinit {

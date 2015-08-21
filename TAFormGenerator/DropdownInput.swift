@@ -8,25 +8,17 @@
 
 import UIKit
 
-class DropdownInput: TextInput, UIPickerViewDataSource, UIPickerViewDelegate {
+class DropdownInput: TextInput {
 
-    var options: [String] = [NSLocalizedString("None", comment: "No choice in a list")]
     var menuWrapper: UIView?
     var picker: UIPickerView?
     
     var menuIsCollapsed: Bool = true
     var menuHeightConstraint: NSLayoutConstraint!
     
+    
     // MARK: - Lifecycle
     
-    
-    convenience init(dropdownOptions: [String], placeholder: String? = nil) {
-        self.init(frame: CGRectZero)
-        
-        self.options += dropdownOptions
-        self.textField.placeholder = placeholder
-    }
-
     
     override func setup() {
         super.setup()
@@ -71,7 +63,6 @@ class DropdownInput: TextInput, UIPickerViewDataSource, UIPickerViewDelegate {
         }
         
         if menuIsCollapsed {
-           
             menuHeightConstraint.constant = 0
             layoutIfNeeded()
             menuHeightConstraint.constant = 160
@@ -96,38 +87,24 @@ class DropdownInput: TextInput, UIPickerViewDataSource, UIPickerViewDelegate {
         menuWrapper!.backgroundColor = UIColor.whiteColor()
         menuWrapper!.clipsToBounds   = true
         
-        let picker        = UIPickerView(forAutoLayout: ())
-        picker.delegate   = self
-        picker.dataSource = self
-        menuWrapper!.addSubview(picker)
-        
-        // Layout setup
-        picker.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
+        if let view = viewForDropdown() {
+            // Layout setup
+            menuWrapper!.addSubview(view)
+            view.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
+        }
+            
+
     }
     
+    /**
+    View to insert in dropdown wrapper. Call only once when needed for display
     
-    // MARK: - Picker datasource
-    
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return options.count
+    :returns: View for dropdown
+    */
+    func viewForDropdown() -> UIView? {
+        // TO OVERRIDE
+        return nil
     }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    
-    // MARK: - Picker delegate
-    
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return options[row]
-    }
-    
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.textField.text = options[row]
-    }
+
 
 }

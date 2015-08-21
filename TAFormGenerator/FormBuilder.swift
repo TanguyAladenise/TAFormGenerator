@@ -97,7 +97,7 @@ class FormBuilder {
     
     
     private func insertInput(inputView: UIView, inView sectionView: SectionWrapperView) {
-        sectionView.addSubview(inputView)
+        sectionView.insertSubview(inputView, atIndex: 0)
         
         setupConstraintsForInput(inputView, inSectionView: sectionView)
     }
