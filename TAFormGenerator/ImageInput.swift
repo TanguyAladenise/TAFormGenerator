@@ -24,6 +24,14 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
     // MARK: - Lifecycle
     
     
+    /**
+    Initializa an image upload input with a label and the target.
+    
+    :param: label  The label for input
+    :param: target The target to host view controllers event. Required for input to work.
+    
+    :returns: An instance of ImageInput
+    */
     convenience init(label: String, target: UIViewController) {
         self.init(frame: CGRectZero)
         
@@ -44,24 +52,28 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
     }
     
     
+    /**
+    Default setup for input
+    */
     private func setup() {
-        self.addSubview(self.label)
-        self.label.backgroundColor = UIColor.clearColor()
+        addSubview(self.label)
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor       = UIColor ( red: 0.5407, green: 0.5407, blue: 0.5407, alpha: 0.62 )
         
-        self.backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.whiteColor()
         
-        self.actionBtn.setImage(UIImage(named: "icoAdd"), forState: .Normal)
-        self.actionBtn.setImage(UIImage(named: "greenCheck"), forState: .Selected)
-        self.actionBtn.addTarget(self, action: "actionBtnPressed:", forControlEvents: .TouchUpInside)
-        self.addSubview(self.actionBtn)
+        actionBtn.setImage(UIImage(named: "icoAdd"), forState: .Normal)
+        actionBtn.setImage(UIImage(named: "greenCheck"), forState: .Selected)
+        actionBtn.addTarget(self, action: "actionBtnPressed:", forControlEvents: .TouchUpInside)
+        addSubview(self.actionBtn)
         
-        self.addSubview(self.loader)
+        addSubview(self.loader)
 
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        self.addSubview(self.imageView)
+        addSubview(self.imageView)
         
-        self.border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
-        self.addSubview(self.border)
+        border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
+        addSubview(self.border)
     }
     
     
@@ -70,8 +82,10 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
     
     func actionBtnPressed(sender: UIButton) {
         if sender.selected {
+            // Remove image
             setImage(nil)
         } else {
+            // Display action sheet
             loader.startAnimating()
             actionBtn.hidden = true
             
@@ -85,8 +99,16 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
             actionSheet.showInView(self)
         }
     }
+
+    
+    // MARK: - Image
     
     
+    /**
+    Set image. If send nil it will remove image
+    
+    :param: image Image to show. Optional 
+    */
     func setImage(image: UIImage?) {
         imageView.image = image
         
@@ -108,6 +130,7 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
         
     }
     
+    
     // MARK: - Action sheet delegate
     
     
@@ -127,6 +150,7 @@ class ImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate
             imagePicker.sourceType = .PhotoLibrary
         }
         
+        // Use target to present picker controller
         if let target = target {
             target.presentViewController(imagePicker, animated: true, completion: nil)
         }

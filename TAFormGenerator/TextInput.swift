@@ -48,16 +48,16 @@ class TextInput: UIView, InputProtocol, UITextFieldDelegate {
     
     
     func setup() {
-        addSubview(self.textField)
-        self.textField.backgroundColor = UIColor.clearColor()
-        self.textField.clearButtonMode = UITextFieldViewMode.WhileEditing
-        self.textField.returnKeyType   = UIReturnKeyType.Done
-        self.textField.delegate        = self
+        addSubview(textField)
+        textField.backgroundColor = UIColor.clearColor()
+        textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        textField.returnKeyType   = UIReturnKeyType.Done
+        textField.delegate        = self
         
-        self.backgroundColor           = UIColor.whiteColor()
+        backgroundColor           = UIColor.whiteColor()
         
-        self.border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
-        addSubview(self.border)
+        border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
+        addSubview(border)
     }
     
     

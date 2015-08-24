@@ -13,26 +13,14 @@ class ViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.greenColor()
-        headerView.autoSetDimension(ALDimension.Height, toSize: 60)
-
-        formBuilder.addSection(headerView, withID: "Header1")
+        formBuilder.addSection(DefaultFormHeaderView(headerTitle: "test"), withID: "Header1")
+        formBuilder.addSection(DefaultFormHeaderView(headerTitle: "test"), withID: "Header2")
         
-        let headerView2 = UIView()
-        headerView2.backgroundColor = UIColor.greenColor()
-        headerView2.autoSetDimension(ALDimension.Height, toSize: 60)
-
-        formBuilder.addSection(headerView2, withID: "Header2")
-        
-        let headerView3 = UIView()
-        headerView3.backgroundColor = UIColor.greenColor()
-        headerView3.autoSetDimension(ALDimension.Height, toSize: 60)
-        formBuilder.addSection(headerView3, withID: "Header3")
+        formBuilder.addSection(DefaultFormHeaderView(headerTitle: "test"), withID: "Header3")
 
         
         let headerView4 = UIView()
-        headerView4.backgroundColor = UIColor.greenColor()
+        headerView4.backgroundColor = UIColor ( red: 0.9719, green: 0.972, blue: 0.972, alpha: 1.0 )
         headerView4.autoSetDimension(ALDimension.Height, toSize: 60)
         let btn = UIButton()
         btn.setTitle("Add", forState: .Normal)
@@ -43,23 +31,20 @@ class ViewController: FormViewController {
         formBuilder.addSection(headerView4, withID: "Header4")
         
         
-        let headerView5 = UIView()
-        headerView5.backgroundColor = UIColor.grayColor()
-        headerView5.autoSetDimension(ALDimension.Height, toSize: 60)
-        formBuilder.addSection(headerView5, withID: "Header5")
+        formBuilder.addSection(DefaultFormHeaderView(headerTitle: "test"), withID: "Header5")
 
         
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeholder: "text"), withID: "text", inSectionID: "Header1")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextTwitterField, placeholder: "twitter"), withID: "twitter", inSectionID: "Header1")
-        
+
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextEmailField, placeholder: "email"), withID: "email", inSectionID: "Header2")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextPhoneField, placeholder: "phone"), withID: "phone", inSectionID: "Header2")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextSecure, placeholder: "password"), withID: "password", inSectionID: "Header2")
         formBuilder.addInput(InputBuilder.textInputWithStyle(.NumberField, placeholder: "number"), withID: "number", inSectionID: "Header2")
         formBuilder.addInput(InputBuilder.dropdownInput(["test1", "test2", "test3", "test4"], placeholder: "Dropdown"), withID: "Dropdown", inSectionID: "Header2")
 
-        
        
+      
         formBuilder.addInput(InputBuilder.textInputWithStyle(.TextField, placeholder: "address"), withID: "address", inSectionID: "Header3")
         var inputs = [InputBuilder.textInputWithStyle(.TextField, placeholder: "country"), InputBuilder.dropdownInput(["zaza", "test", "dw", "cx", "sd", "dsqd"], placeholder: "Year")]
         var ids = ["1", "2"]
@@ -67,7 +52,7 @@ class ViewController: FormViewController {
         formBuilder.addInput(InputBuilder.radioButtons("Size", options: ["XS", "S", "M", "L", "XL"]), withID: "radio", inSectionID: "Header3")
         formBuilder.addInput(InputBuilder.radioButtons("Gender", options: ["Male", "Female"]), withID: "gender", inSectionID: "Header3")
         formBuilder.addInput(InputBuilder.radioButtons("DO YOU WISH TO BLAH BLAH THIS IS TWO LINES QUESTION THAT TAKES MORE SPACE", options: ["YES", "NO"]), withID: "question1", inSectionID: "Header3")
-        
+
         
         formBuilder.addInput(InputBuilder.imageInput("Image", target: self), withID: "image", inSectionID: "Header5")
         formBuilder.addInput(InputBuilder.linksInput("Add a link", target: self), withID: "links", inSectionID: "Header5")

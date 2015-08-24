@@ -21,6 +21,14 @@ class LinksInput: TextInput, AddLinkControllerDelegate {
     // MARK: - Lifecycle
     
     
+    /**
+    Init a linksInput with a placeholder and target.
+    
+    :param: placeholder Placeholder label. Optional.
+    :param: target The target to host view controllers event. Required for input to work.
+    
+    :returns: An instance of LinksInput
+    */
     convenience init(placeholder: String? = nil, target: UIViewController) {
         self.init(frame: CGRectZero)
         
@@ -29,25 +37,33 @@ class LinksInput: TextInput, AddLinkControllerDelegate {
     }
     
     
+    /**
+    Default setup for input
+    */
     override func setup() {
         super.setup()
         
-        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+        setTranslatesAutoresizingMaskIntoConstraints(false)
         
-        self.addSubview(linksWrapper)
+        addSubview(linksWrapper)
         
-        let imageView                = UIImageView(image: UIImage(named: "icoAdd"))
-        self.textField.rightView     = imageView
-        self.textField.rightViewMode = UITextFieldViewMode.Always
+        let imageView           = UIImageView(image: UIImage(named: "icoAdd"))
+        textField.rightView     = imageView
+        textField.rightViewMode = UITextFieldViewMode.Always
     }
     
     
     // MARK: - UI actions
     
     
+    /**
+    Show the add link modal
+    */
     func addLink() {
         let vc      = AddLinkViewController(nibName: "AddLinkViewController", bundle: nil)
         vc.delegate = self
+        
+        // Use target for presenting controller
         if let target = target {
             target.presentViewController(vc, animated: true, completion: nil)
         }
@@ -57,18 +73,33 @@ class LinksInput: TextInput, AddLinkControllerDelegate {
     // MARK: - View
     
     
+    /**
+    Insert a new link to the input
+    
+    :param: link Link to add
+    */
     func insertLink(link: Link) {
         let linkView = generateLinkView(link)
         linksWrapper.insertSubview(linkView, atIndex: 0)
+        // Set constraints
         setConstraintsForLinkView(linkView)
+        // Store for reuse
         linkViews.append(linkView)
         
+        // Animate
         UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             self.layoutIfNeeded()
         }, completion: nil)
     }
     
     
+    /**
+    Create a link view
+    
+    :param: link Link to set data
+    
+    :returns: A view representing the link object
+    */
     func generateLinkView(link: Link) -> UIView {
         let wrapper = UIView(forAutoLayout: ())
         

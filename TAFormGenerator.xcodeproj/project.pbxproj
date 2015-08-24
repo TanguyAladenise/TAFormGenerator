@@ -29,6 +29,7 @@
 		5E5F7C441B870D8B00501545 /* URLInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C431B870D8B00501545 /* URLInput.swift */; };
 		5E5F7C461B876E4E00501545 /* DropdownOptionsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C451B876E4E00501545 /* DropdownOptionsInput.swift */; };
 		5E5F7C4A1B876FF700501545 /* DateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C491B876FF700501545 /* DateInput.swift */; };
+		5E5F7C4C1B8B077900501545 /* DefaultFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C4B1B8B077900501545 /* DefaultFormHeaderView.swift */; };
 		5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1761B7B754600A95590 /* AppDelegate.swift */; };
 		5EF4D1791B7B754600A95590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1781B7B754600A95590 /* ViewController.swift */; };
 		5EF4D17C1B7B754600A95590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17A1B7B754600A95590 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		5E5F7C431B870D8B00501545 /* URLInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLInput.swift; sourceTree = "<group>"; };
 		5E5F7C451B876E4E00501545 /* DropdownOptionsInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownOptionsInput.swift; sourceTree = "<group>"; };
 		5E5F7C491B876FF700501545 /* DateInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInput.swift; sourceTree = "<group>"; };
+		5E5F7C4B1B8B077900501545 /* DefaultFormHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultFormHeaderView.swift; sourceTree = "<group>"; };
 		5EF4D1711B7B754600A95590 /* TAFormGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAFormGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4D1751B7B754600A95590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4D1761B7B754600A95590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */,
 				5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */,
 				5EF4D1981B7B888D00A95590 /* Form.swift */,
+				5E5F7C4B1B8B077900501545 /* DefaultFormHeaderView.swift */,
 				5E50A0D71B7CCA380068C327 /* Defaults Inputs */,
 				5EF4D17A1B7B754600A95590 /* Main.storyboard */,
 				5EF4D17D1B7B754600A95590 /* Images.xcassets */,
@@ -410,6 +413,7 @@
 				5E50A0D41B7C9CE40068C327 /* EmailInput.swift in Sources */,
 				5E50A0DB1B7CF7470068C327 /* TwitterInput.swift in Sources */,
 				5E50A0D61B7CC5B90068C327 /* SectionWrapperView.swift in Sources */,
+				5E5F7C4C1B8B077900501545 /* DefaultFormHeaderView.swift in Sources */,
 				5E50A0DF1B7CF79D0068C327 /* SecureInput.swift in Sources */,
 				5E50A0E31B7DCC500068C327 /* RadioButtonsInput.swift in Sources */,
 				5E50A0E11B7CF7D90068C327 /* NumberInput.swift in Sources */,

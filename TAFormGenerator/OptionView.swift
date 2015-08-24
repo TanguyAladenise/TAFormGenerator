@@ -62,7 +62,7 @@ class OptionView: UIView {
         clipsToBounds = true
         
         label.textAlignment = .Center
-        label.font = UIFont.systemFontOfSize(12)
+        label.font = UIFont.systemFontOfSize(13)
         setSelected(selected, animated: false)
     }
     

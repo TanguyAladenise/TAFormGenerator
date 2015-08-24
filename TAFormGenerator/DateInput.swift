@@ -50,11 +50,11 @@ class DateInput: DropdownInput {
         } else {
             dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         }
-        dateFormatter.dateStyle           = NSDateFormatterStyle.MediumStyle
-        dateFormatter.locale              = NSLocale.currentLocale()
-        dateFormatter.timeZone            = NSTimeZone.localTimeZone()
-        var dateString = dateFormatter.stringFromDate(sender.date)
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.locale    = NSLocale.currentLocale()
+        dateFormatter.timeZone  = NSTimeZone.localTimeZone()
         
+        var dateString           = dateFormatter.stringFromDate(sender.date)
         dateFormatter.dateFormat = "eee"
         dateString = "\(dateFormatter.stringFromDate(sender.date)) \(dateString)"
         textField.text = dateString

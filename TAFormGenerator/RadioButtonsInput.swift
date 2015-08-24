@@ -26,6 +26,14 @@ class RadioButtonsInput: UIView {
     // MARK: - Lifecycle
     
     
+    /**
+    Init a radio input with its label and different options
+    
+    :param: label   The label for the input. Display on the left
+    :param: options The options selectable by the input
+    
+    :returns: The input view
+    */
     convenience init(label: String, options: [String]?) {
         self.init(frame: CGRectZero)
         
@@ -51,14 +59,21 @@ class RadioButtonsInput: UIView {
     }
     
     
+    /**
+    Default setup for input
+    */
     func setup() {
-        addSubview(label)
-        addSubview(optionsWrapper)
-        addSubview(border)
-        
         backgroundColor = UIColor.whiteColor()
-        
+
+        addSubview(label)
         label.numberOfLines = 0
+        label.font = UIFont.systemFontOfSize(12)
+        label.textColor = UIColor ( red: 0.5407, green: 0.5407, blue: 0.5407, alpha: 0.62 )
+
+        addSubview(optionsWrapper)
+        
+        addSubview(border)
+        border.backgroundColor = UIColor ( red: 0.7507, green: 0.7507, blue: 0.7507, alpha: 0.35 )
         
         setTranslatesAutoresizingMaskIntoConstraints(false)
         label.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -69,17 +84,28 @@ class RadioButtonsInput: UIView {
     // MARK: - Option setup
     
     
+    /**
+    Add an option to the input
+    
+    :param: option Option label
+    */
     func addOption(option: String) {
+        // Create the view
         let option = OptionView(optionLabel: option)
         option.setTranslatesAutoresizingMaskIntoConstraints(false)
         optionsWrapper.addSubview(option)
         
+        // Constraints
+        setupConstraintsForOption(option)
+        
+        // Bind touch events
         let tap = UITapGestureRecognizer(target: self, action: "handleTap:")
         option.addGestureRecognizer(tap)
         
-        setupConstraintsForOption(option)
+        // Store for reuse (useful for constraints setup
         optionViews.append(option)
         
+        // By default the first option will be selected
         if selectedOptionView == nil {
             selectedOptionView = option
             option.setSelected(true, animated: false)
@@ -87,14 +113,18 @@ class RadioButtonsInput: UIView {
     }
     
     
+    // MARK: - UI Actions
+    
     
     func handleTap(gesture: UITapGestureRecognizer) {
         if let optionView = gesture.view as? OptionView {
             
+            // Ignore tap on already selected option
             if optionView == selectedOptionView {
                 return
             }
             
+            // Change selected focus
             selectedOptionView.setSelected(false, animated: true)
             optionView.setSelected(true, animated: true)
             selectedOptionView = optionView
@@ -107,6 +137,8 @@ class RadioButtonsInput: UIView {
     
     override func updateConstraints() {
         if !didSetupConstraints {
+            
+            // Set default constraints for view to work (label floating left, options floating right and border at the bottom)
             
             autoSetDimension(ALDimension.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
             
@@ -136,14 +168,20 @@ class RadioButtonsInput: UIView {
     }
     
     
+    /**
+    Setup constraints for dynamic new view
+    
+    :param: optionView Optiokn view added
+    */
     func setupConstraintsForOption(optionView: UIView) {
+        
+        // If first option left side stick to superview, otherwise it sticks to previous option view
         if optionViews.count == 0 {
             optionView.autoPinEdge(.Trailing, toEdge: .Left, ofView: optionView.superview, withOffset: 15, relation: NSLayoutRelation.GreaterThanOrEqual)
         } else {
             let prevInput = optionViews.last
             prevInput!.superview!.removeConstraint(wrapperTrailingConstraint)
             optionView.autoPinEdge(ALEdge.Leading, toEdge: ALEdge.Trailing, ofView: prevInput, withOffset: 12)
-//            optionView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: prevInput)
         }
         
         optionView.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)

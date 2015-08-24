@@ -18,14 +18,14 @@ class FormViewController: UIViewController {
     private var scrollView: UIScrollView!
     private lazy var formView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.brownColor()
+        view.backgroundColor = UIColor.clearColor()
         
         return view
     }()
     /// Button always at the bottom of the of the form. For validating
     private lazy var validateFormButton: UIButton = {
         let button: UIButton   = UIButton.buttonWithType(.Custom) as! UIButton
-        button.backgroundColor = UIColor.redColor()
+        button.backgroundColor = UIColor.blueColor()
         button.setTitle(NSLocalizedString("Confirm", comment: ""), forState: .Normal)
         button.addTarget(self, action: "validateButtonPressed", forControlEvents: .TouchUpInside)
         return button
@@ -47,7 +47,7 @@ class FormViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.yellowColor()
+        scrollView.backgroundColor = UIColor.clearColor()
         scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         view.addSubview(scrollView)
         

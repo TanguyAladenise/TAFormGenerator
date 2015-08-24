@@ -28,8 +28,6 @@ class DropdownInput: TextInput {
         let imageView           = UIImageView(image: UIImage(named: "icoAdd"))
         textField.rightView     = imageView
         textField.rightViewMode = UITextFieldViewMode.Always
-        
-        textField.backgroundColor = UIColor.purpleColor()
     }
     
     
