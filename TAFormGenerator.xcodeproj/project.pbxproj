@@ -7,40 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E50A0D41B7C9CE40068C327 /* EmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0D31B7C9CE40068C327 /* EmailInput.swift */; };
-		5E50A0D61B7CC5B90068C327 /* SectionWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */; };
-		5E50A0DB1B7CF7470068C327 /* TwitterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0DA1B7CF7470068C327 /* TwitterInput.swift */; };
-		5E50A0DD1B7CF76C0068C327 /* PhoneInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0DC1B7CF76C0068C327 /* PhoneInput.swift */; };
-		5E50A0DF1B7CF79D0068C327 /* SecureInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0DE1B7CF79D0068C327 /* SecureInput.swift */; };
-		5E50A0E11B7CF7D90068C327 /* NumberInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E01B7CF7D90068C327 /* NumberInput.swift */; };
-		5E50A0E31B7DCC500068C327 /* RadioButtonsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E21B7DCC500068C327 /* RadioButtonsInput.swift */; };
-		5E50A0E61B7DCE580068C327 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E51B7DCE580068C327 /* OptionView.swift */; };
-		5E50A0E81B7E52770068C327 /* DropdownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E71B7E52770068C327 /* DropdownInput.swift */; };
-		5E50A0EC1B7E54860068C327 /* icoAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E50A0E91B7E54860068C327 /* icoAdd.png */; };
-		5E50A0ED1B7E54860068C327 /* icoAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E50A0EA1B7E54860068C327 /* icoAdd@2x.png */; };
-		5E50A0EE1B7E54860068C327 /* icoAdd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E50A0EB1B7E54860068C327 /* icoAdd@3x.png */; };
-		5E5F7C341B85D9ED00501545 /* ImageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C331B85D9ED00501545 /* ImageInput.swift */; };
-		5E5F7C381B860B8600501545 /* greenCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C351B860B8600501545 /* greenCheck.png */; };
-		5E5F7C391B860B8600501545 /* greenCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C361B860B8600501545 /* greenCheck@2x.png */; };
-		5E5F7C3A1B860B8600501545 /* greenCheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C371B860B8600501545 /* greenCheck@3x.png */; };
-		5E5F7C3E1B86270A00501545 /* LinksInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C3D1B86270A00501545 /* LinksInput.swift */; };
-		5E5F7C411B8632AC00501545 /* AddLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C3F1B8632AC00501545 /* AddLinkViewController.swift */; };
-		5E5F7C421B8632AC00501545 /* AddLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C401B8632AC00501545 /* AddLinkViewController.xib */; };
-		5E5F7C441B870D8B00501545 /* URLInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C431B870D8B00501545 /* URLInput.swift */; };
-		5E5F7C461B876E4E00501545 /* DropdownOptionsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C451B876E4E00501545 /* DropdownOptionsInput.swift */; };
-		5E5F7C4A1B876FF700501545 /* DateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C491B876FF700501545 /* DateInput.swift */; };
-		5E5F7C4C1B8B077900501545 /* DefaultFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C4B1B8B077900501545 /* DefaultFormHeaderView.swift */; };
+		5E50A0D41B7C9CE40068C327 /* TAEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0D31B7C9CE40068C327 /* TAEmailInput.swift */; };
+		5E50A0D61B7CC5B90068C327 /* TASectionWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0D51B7CC5B90068C327 /* TASectionWrapperView.swift */; };
+		5E50A0DB1B7CF7470068C327 /* TATwitterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0DA1B7CF7470068C327 /* TATwitterInput.swift */; };
+		5E50A0DD1B7CF76C0068C327 /* TAPhoneInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0DC1B7CF76C0068C327 /* TAPhoneInput.swift */; };
+		5E50A0DF1B7CF79D0068C327 /* TASecureInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0DE1B7CF79D0068C327 /* TASecureInput.swift */; };
+		5E50A0E11B7CF7D90068C327 /* TANumberInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E01B7CF7D90068C327 /* TANumberInput.swift */; };
+		5E50A0E31B7DCC500068C327 /* TARadioButtonsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E21B7DCC500068C327 /* TARadioButtonsInput.swift */; };
+		5E50A0E61B7DCE580068C327 /* TAOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E51B7DCE580068C327 /* TAOptionView.swift */; };
+		5E50A0E81B7E52770068C327 /* TADropdownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50A0E71B7E52770068C327 /* TADropdownInput.swift */; };
+		5E5F7C341B85D9ED00501545 /* TAImageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C331B85D9ED00501545 /* TAImageInput.swift */; };
+		5E5F7C3E1B86270A00501545 /* TALinksInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C3D1B86270A00501545 /* TALinksInput.swift */; };
+		5E5F7C411B8632AC00501545 /* TAAddLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C3F1B8632AC00501545 /* TAAddLinkViewController.swift */; };
+		5E5F7C421B8632AC00501545 /* TAAddLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F7C401B8632AC00501545 /* TAAddLinkViewController.xib */; };
+		5E5F7C441B870D8B00501545 /* TAURLInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C431B870D8B00501545 /* TAURLInput.swift */; };
+		5E5F7C461B876E4E00501545 /* TADropdownOptionsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C451B876E4E00501545 /* TADropdownOptionsInput.swift */; };
+		5E5F7C4A1B876FF700501545 /* TADateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C491B876FF700501545 /* TADateInput.swift */; };
+		5E5F7C4C1B8B077900501545 /* TADefaultFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C4B1B8B077900501545 /* TADefaultFormHeaderView.swift */; };
+		5EE0A69E1B8CBAD500A92E8D /* icoAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6801B8CBAD500A92E8D /* icoAdd.png */; };
+		5EE0A69F1B8CBAD500A92E8D /* icoAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6811B8CBAD500A92E8D /* icoAdd@2x.png */; };
+		5EE0A6A01B8CBAD500A92E8D /* icoAdd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6821B8CBAD500A92E8D /* icoAdd@3x.png */; };
+		5EE0A6A11B8CBAD500A92E8D /* icoChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6831B8CBAD500A92E8D /* icoChecked.png */; };
+		5EE0A6A21B8CBAD500A92E8D /* icoChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6841B8CBAD500A92E8D /* icoChecked@2x.png */; };
+		5EE0A6A31B8CBAD500A92E8D /* icoChecked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6851B8CBAD500A92E8D /* icoChecked@3x.png */; };
+		5EE0A6A41B8CBAD500A92E8D /* icoCompleted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6861B8CBAD500A92E8D /* icoCompleted.png */; };
+		5EE0A6A51B8CBAD500A92E8D /* icoCompleted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6871B8CBAD500A92E8D /* icoCompleted@2x.png */; };
+		5EE0A6A61B8CBAD500A92E8D /* icoCompleted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6881B8CBAD500A92E8D /* icoCompleted@3x.png */; };
+		5EE0A6A71B8CBAD500A92E8D /* icoDecrease.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6891B8CBAD500A92E8D /* icoDecrease.png */; };
+		5EE0A6A81B8CBAD500A92E8D /* icoDecrease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A68A1B8CBAD500A92E8D /* icoDecrease@2x.png */; };
+		5EE0A6A91B8CBAD500A92E8D /* icoDecrease@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A68B1B8CBAD500A92E8D /* icoDecrease@3x.png */; };
+		5EE0A6AA1B8CBAD500A92E8D /* icoDeletePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A68C1B8CBAD500A92E8D /* icoDeletePhoto.png */; };
+		5EE0A6AB1B8CBAD500A92E8D /* icoDeletePhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A68D1B8CBAD500A92E8D /* icoDeletePhoto@2x.png */; };
+		5EE0A6AC1B8CBAD500A92E8D /* icoDeletePhoto@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A68E1B8CBAD500A92E8D /* icoDeletePhoto@3x.png */; };
+		5EE0A6AD1B8CBAD500A92E8D /* icoExpand.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A68F1B8CBAD500A92E8D /* icoExpand.png */; };
+		5EE0A6AE1B8CBAD500A92E8D /* icoExpand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6901B8CBAD500A92E8D /* icoExpand@2x.png */; };
+		5EE0A6AF1B8CBAD500A92E8D /* icoExpand@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6911B8CBAD500A92E8D /* icoExpand@3x.png */; };
+		5EE0A6B01B8CBAD500A92E8D /* icoIncrease.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6921B8CBAD500A92E8D /* icoIncrease.png */; };
+		5EE0A6B11B8CBAD500A92E8D /* icoIncrease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6931B8CBAD500A92E8D /* icoIncrease@2x.png */; };
+		5EE0A6B21B8CBAD500A92E8D /* icoIncrease@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6941B8CBAD500A92E8D /* icoIncrease@3x.png */; };
+		5EE0A6B31B8CBAD500A92E8D /* icoInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6951B8CBAD500A92E8D /* icoInfo.png */; };
+		5EE0A6B41B8CBAD500A92E8D /* icoInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6961B8CBAD500A92E8D /* icoInfo@2x.png */; };
+		5EE0A6B51B8CBAD500A92E8D /* icoInfo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6971B8CBAD500A92E8D /* icoInfo@3x.png */; };
+		5EE0A6B61B8CBAD500A92E8D /* icoPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6981B8CBAD500A92E8D /* icoPhoto.png */; };
+		5EE0A6B71B8CBAD500A92E8D /* icoPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6991B8CBAD500A92E8D /* icoPhoto@2x.png */; };
+		5EE0A6B81B8CBAD500A92E8D /* icoPhoto@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A69A1B8CBAD500A92E8D /* icoPhoto@3x.png */; };
+		5EE0A6B91B8CBAD500A92E8D /* icoSearchLocate.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A69B1B8CBAD500A92E8D /* icoSearchLocate.png */; };
+		5EE0A6BA1B8CBAD500A92E8D /* icoSearchLocate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A69C1B8CBAD500A92E8D /* icoSearchLocate@2x.png */; };
+		5EE0A6BB1B8CBAD500A92E8D /* icoSearchLocate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A69D1B8CBAD500A92E8D /* icoSearchLocate@3x.png */; };
+		5EE0A6BD1B8CC2C400A92E8D /* TAStepperInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE0A6BC1B8CC2C400A92E8D /* TAStepperInput.swift */; };
+		5EE0A6BF1B8DC59A00A92E8D /* TAFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE0A6BE1B8DC59A00A92E8D /* TAFormValidator.swift */; };
+		5EE0A6C21B8DC96800A92E8D /* TAInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE0A6C11B8DC96800A92E8D /* TAInputValidator.swift */; };
+		5EE0A6C41B8DE98600A92E8D /* TAFormError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE0A6C31B8DE98600A92E8D /* TAFormError.swift */; };
 		5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1761B7B754600A95590 /* AppDelegate.swift */; };
 		5EF4D1791B7B754600A95590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1781B7B754600A95590 /* ViewController.swift */; };
 		5EF4D17C1B7B754600A95590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17A1B7B754600A95590 /* Main.storyboard */; };
 		5EF4D17E1B7B754600A95590 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17D1B7B754600A95590 /* Images.xcassets */; };
 		5EF4D1811B7B754600A95590 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4D17F1B7B754600A95590 /* LaunchScreen.xib */; };
 		5EF4D18D1B7B754600A95590 /* TAFormGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D18C1B7B754600A95590 /* TAFormGeneratorTests.swift */; };
-		5EF4D1971B7B7EDB00A95590 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */; };
-		5EF4D1991B7B888D00A95590 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1981B7B888D00A95590 /* Form.swift */; };
-		5EF4D19C1B7B94B100A95590 /* FormBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */; };
-		5EF4D19E1B7BADAF00A95590 /* InputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */; };
-		5EF4D1A01B7C829200A95590 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19F1B7C829200A95590 /* TextInput.swift */; };
+		5EF4D1971B7B7EDB00A95590 /* TAFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1961B7B7EDB00A95590 /* TAFormViewController.swift */; };
+		5EF4D1991B7B888D00A95590 /* TAForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D1981B7B888D00A95590 /* TAForm.swift */; };
+		5EF4D19C1B7B94B100A95590 /* TAFormBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19B1B7B94B100A95590 /* TAFormBuilder.swift */; };
+		5EF4D19E1B7BADAF00A95590 /* TAInputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19D1B7BADAF00A95590 /* TAInputBuilder.swift */; };
+		5EF4D1A01B7C829200A95590 /* TATextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4D19F1B7C829200A95590 /* TATextInput.swift */; };
 		6AD00279E9F22208A5F0E02F /* libPods-TAFormGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8BC98C421AA56CC5A52913E /* libPods-TAFormGenerator.a */; };
 /* End PBXBuildFile section */
 
@@ -57,29 +85,57 @@
 /* Begin PBXFileReference section */
 		0F2B1665B1F769601AF2564C /* Pods-TAFormGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAFormGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TAFormGenerator/Pods-TAFormGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		3F1030B4483B2AAFE0209F16 /* Pods-TAFormGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAFormGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TAFormGenerator/Pods-TAFormGenerator.debug.xcconfig"; sourceTree = "<group>"; };
-		5E50A0D31B7C9CE40068C327 /* EmailInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailInput.swift; sourceTree = "<group>"; };
-		5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionWrapperView.swift; sourceTree = "<group>"; };
-		5E50A0DA1B7CF7470068C327 /* TwitterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterInput.swift; sourceTree = "<group>"; };
-		5E50A0DC1B7CF76C0068C327 /* PhoneInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneInput.swift; sourceTree = "<group>"; };
-		5E50A0DE1B7CF79D0068C327 /* SecureInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureInput.swift; sourceTree = "<group>"; };
-		5E50A0E01B7CF7D90068C327 /* NumberInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberInput.swift; sourceTree = "<group>"; };
-		5E50A0E21B7DCC500068C327 /* RadioButtonsInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonsInput.swift; sourceTree = "<group>"; };
-		5E50A0E51B7DCE580068C327 /* OptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
-		5E50A0E71B7E52770068C327 /* DropdownInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownInput.swift; sourceTree = "<group>"; };
-		5E50A0E91B7E54860068C327 /* icoAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoAdd.png; sourceTree = "<group>"; };
-		5E50A0EA1B7E54860068C327 /* icoAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@2x.png"; sourceTree = "<group>"; };
-		5E50A0EB1B7E54860068C327 /* icoAdd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@3x.png"; sourceTree = "<group>"; };
-		5E5F7C331B85D9ED00501545 /* ImageInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInput.swift; sourceTree = "<group>"; };
-		5E5F7C351B860B8600501545 /* greenCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenCheck.png; sourceTree = "<group>"; };
-		5E5F7C361B860B8600501545 /* greenCheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenCheck@2x.png"; sourceTree = "<group>"; };
-		5E5F7C371B860B8600501545 /* greenCheck@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenCheck@3x.png"; sourceTree = "<group>"; };
-		5E5F7C3D1B86270A00501545 /* LinksInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksInput.swift; sourceTree = "<group>"; };
-		5E5F7C3F1B8632AC00501545 /* AddLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLinkViewController.swift; sourceTree = "<group>"; };
-		5E5F7C401B8632AC00501545 /* AddLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLinkViewController.xib; sourceTree = "<group>"; };
-		5E5F7C431B870D8B00501545 /* URLInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLInput.swift; sourceTree = "<group>"; };
-		5E5F7C451B876E4E00501545 /* DropdownOptionsInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownOptionsInput.swift; sourceTree = "<group>"; };
-		5E5F7C491B876FF700501545 /* DateInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInput.swift; sourceTree = "<group>"; };
-		5E5F7C4B1B8B077900501545 /* DefaultFormHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultFormHeaderView.swift; sourceTree = "<group>"; };
+		5E50A0D31B7C9CE40068C327 /* TAEmailInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAEmailInput.swift; sourceTree = "<group>"; };
+		5E50A0D51B7CC5B90068C327 /* TASectionWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASectionWrapperView.swift; sourceTree = "<group>"; };
+		5E50A0DA1B7CF7470068C327 /* TATwitterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATwitterInput.swift; sourceTree = "<group>"; };
+		5E50A0DC1B7CF76C0068C327 /* TAPhoneInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAPhoneInput.swift; sourceTree = "<group>"; };
+		5E50A0DE1B7CF79D0068C327 /* TASecureInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASecureInput.swift; sourceTree = "<group>"; };
+		5E50A0E01B7CF7D90068C327 /* TANumberInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TANumberInput.swift; sourceTree = "<group>"; };
+		5E50A0E21B7DCC500068C327 /* TARadioButtonsInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARadioButtonsInput.swift; sourceTree = "<group>"; };
+		5E50A0E51B7DCE580068C327 /* TAOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAOptionView.swift; sourceTree = "<group>"; };
+		5E50A0E71B7E52770068C327 /* TADropdownInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADropdownInput.swift; sourceTree = "<group>"; };
+		5E5F7C331B85D9ED00501545 /* TAImageInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAImageInput.swift; sourceTree = "<group>"; };
+		5E5F7C3D1B86270A00501545 /* TALinksInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALinksInput.swift; sourceTree = "<group>"; };
+		5E5F7C3F1B8632AC00501545 /* TAAddLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAddLinkViewController.swift; sourceTree = "<group>"; };
+		5E5F7C401B8632AC00501545 /* TAAddLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAAddLinkViewController.xib; sourceTree = "<group>"; };
+		5E5F7C431B870D8B00501545 /* TAURLInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAURLInput.swift; sourceTree = "<group>"; };
+		5E5F7C451B876E4E00501545 /* TADropdownOptionsInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADropdownOptionsInput.swift; sourceTree = "<group>"; };
+		5E5F7C491B876FF700501545 /* TADateInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADateInput.swift; sourceTree = "<group>"; };
+		5E5F7C4B1B8B077900501545 /* TADefaultFormHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADefaultFormHeaderView.swift; sourceTree = "<group>"; };
+		5EE0A6801B8CBAD500A92E8D /* icoAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoAdd.png; sourceTree = "<group>"; };
+		5EE0A6811B8CBAD500A92E8D /* icoAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@2x.png"; sourceTree = "<group>"; };
+		5EE0A6821B8CBAD500A92E8D /* icoAdd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@3x.png"; sourceTree = "<group>"; };
+		5EE0A6831B8CBAD500A92E8D /* icoChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoChecked.png; sourceTree = "<group>"; };
+		5EE0A6841B8CBAD500A92E8D /* icoChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoChecked@2x.png"; sourceTree = "<group>"; };
+		5EE0A6851B8CBAD500A92E8D /* icoChecked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoChecked@3x.png"; sourceTree = "<group>"; };
+		5EE0A6861B8CBAD500A92E8D /* icoCompleted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoCompleted.png; sourceTree = "<group>"; };
+		5EE0A6871B8CBAD500A92E8D /* icoCompleted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoCompleted@2x.png"; sourceTree = "<group>"; };
+		5EE0A6881B8CBAD500A92E8D /* icoCompleted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoCompleted@3x.png"; sourceTree = "<group>"; };
+		5EE0A6891B8CBAD500A92E8D /* icoDecrease.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoDecrease.png; sourceTree = "<group>"; };
+		5EE0A68A1B8CBAD500A92E8D /* icoDecrease@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoDecrease@2x.png"; sourceTree = "<group>"; };
+		5EE0A68B1B8CBAD500A92E8D /* icoDecrease@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoDecrease@3x.png"; sourceTree = "<group>"; };
+		5EE0A68C1B8CBAD500A92E8D /* icoDeletePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoDeletePhoto.png; sourceTree = "<group>"; };
+		5EE0A68D1B8CBAD500A92E8D /* icoDeletePhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoDeletePhoto@2x.png"; sourceTree = "<group>"; };
+		5EE0A68E1B8CBAD500A92E8D /* icoDeletePhoto@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoDeletePhoto@3x.png"; sourceTree = "<group>"; };
+		5EE0A68F1B8CBAD500A92E8D /* icoExpand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoExpand.png; sourceTree = "<group>"; };
+		5EE0A6901B8CBAD500A92E8D /* icoExpand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoExpand@2x.png"; sourceTree = "<group>"; };
+		5EE0A6911B8CBAD500A92E8D /* icoExpand@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoExpand@3x.png"; sourceTree = "<group>"; };
+		5EE0A6921B8CBAD500A92E8D /* icoIncrease.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoIncrease.png; sourceTree = "<group>"; };
+		5EE0A6931B8CBAD500A92E8D /* icoIncrease@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoIncrease@2x.png"; sourceTree = "<group>"; };
+		5EE0A6941B8CBAD500A92E8D /* icoIncrease@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoIncrease@3x.png"; sourceTree = "<group>"; };
+		5EE0A6951B8CBAD500A92E8D /* icoInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoInfo.png; sourceTree = "<group>"; };
+		5EE0A6961B8CBAD500A92E8D /* icoInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoInfo@2x.png"; sourceTree = "<group>"; };
+		5EE0A6971B8CBAD500A92E8D /* icoInfo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoInfo@3x.png"; sourceTree = "<group>"; };
+		5EE0A6981B8CBAD500A92E8D /* icoPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoPhoto.png; sourceTree = "<group>"; };
+		5EE0A6991B8CBAD500A92E8D /* icoPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoPhoto@2x.png"; sourceTree = "<group>"; };
+		5EE0A69A1B8CBAD500A92E8D /* icoPhoto@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoPhoto@3x.png"; sourceTree = "<group>"; };
+		5EE0A69B1B8CBAD500A92E8D /* icoSearchLocate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoSearchLocate.png; sourceTree = "<group>"; };
+		5EE0A69C1B8CBAD500A92E8D /* icoSearchLocate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoSearchLocate@2x.png"; sourceTree = "<group>"; };
+		5EE0A69D1B8CBAD500A92E8D /* icoSearchLocate@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoSearchLocate@3x.png"; sourceTree = "<group>"; };
+		5EE0A6BC1B8CC2C400A92E8D /* TAStepperInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAStepperInput.swift; sourceTree = "<group>"; };
+		5EE0A6BE1B8DC59A00A92E8D /* TAFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAFormValidator.swift; sourceTree = "<group>"; };
+		5EE0A6C11B8DC96800A92E8D /* TAInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAInputValidator.swift; sourceTree = "<group>"; };
+		5EE0A6C31B8DE98600A92E8D /* TAFormError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAFormError.swift; sourceTree = "<group>"; };
 		5EF4D1711B7B754600A95590 /* TAFormGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAFormGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4D1751B7B754600A95590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4D1761B7B754600A95590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,12 +146,12 @@
 		5EF4D1861B7B754600A95590 /* TAFormGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TAFormGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4D18B1B7B754600A95590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4D18C1B7B754600A95590 /* TAFormGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFormGeneratorTests.swift; sourceTree = "<group>"; };
-		5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
-		5EF4D1981B7B888D00A95590 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		5EF4D1961B7B7EDB00A95590 /* TAFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAFormViewController.swift; sourceTree = "<group>"; };
+		5EF4D1981B7B888D00A95590 /* TAForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAForm.swift; sourceTree = "<group>"; };
 		5EF4D19A1B7B8ABC00A95590 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBuilder.swift; sourceTree = "<group>"; };
-		5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputBuilder.swift; sourceTree = "<group>"; };
-		5EF4D19F1B7C829200A95590 /* TextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
+		5EF4D19B1B7B94B100A95590 /* TAFormBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAFormBuilder.swift; sourceTree = "<group>"; };
+		5EF4D19D1B7BADAF00A95590 /* TAInputBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAInputBuilder.swift; sourceTree = "<group>"; };
+		5EF4D19F1B7C829200A95590 /* TATextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATextInput.swift; sourceTree = "<group>"; };
 		A8BC98C421AA56CC5A52913E /* libPods-TAFormGenerator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAFormGenerator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,7 +188,8 @@
 			children = (
 				5E50A0E41B7DCE140068C327 /* TextFieldInputs */,
 				5E5F7C321B85D83F00501545 /* RadioInput */,
-				5E5F7C331B85D9ED00501545 /* ImageInput.swift */,
+				5E5F7C331B85D9ED00501545 /* TAImageInput.swift */,
+				5EE0A6BC1B8CC2C400A92E8D /* TAStepperInput.swift */,
 			);
 			name = "Defaults Inputs";
 			sourceTree = "<group>";
@@ -140,13 +197,13 @@
 		5E50A0E41B7DCE140068C327 /* TextFieldInputs */ = {
 			isa = PBXGroup;
 			children = (
-				5EF4D19F1B7C829200A95590 /* TextInput.swift */,
-				5E50A0D31B7C9CE40068C327 /* EmailInput.swift */,
-				5E50A0DA1B7CF7470068C327 /* TwitterInput.swift */,
-				5E50A0DC1B7CF76C0068C327 /* PhoneInput.swift */,
-				5E50A0DE1B7CF79D0068C327 /* SecureInput.swift */,
-				5E50A0E01B7CF7D90068C327 /* NumberInput.swift */,
-				5E5F7C431B870D8B00501545 /* URLInput.swift */,
+				5EF4D19F1B7C829200A95590 /* TATextInput.swift */,
+				5E50A0D31B7C9CE40068C327 /* TAEmailInput.swift */,
+				5E50A0DA1B7CF7470068C327 /* TATwitterInput.swift */,
+				5E50A0DC1B7CF76C0068C327 /* TAPhoneInput.swift */,
+				5E50A0DE1B7CF79D0068C327 /* TASecureInput.swift */,
+				5E50A0E01B7CF7D90068C327 /* TANumberInput.swift */,
+				5E5F7C431B870D8B00501545 /* TAURLInput.swift */,
 				5E5F7C481B876FE700501545 /* Dropdowns */,
 				5E5F7C471B876FDB00501545 /* LinksInput */,
 			);
@@ -156,8 +213,8 @@
 		5E5F7C321B85D83F00501545 /* RadioInput */ = {
 			isa = PBXGroup;
 			children = (
-				5E50A0E21B7DCC500068C327 /* RadioButtonsInput.swift */,
-				5E50A0E51B7DCE580068C327 /* OptionView.swift */,
+				5E50A0E21B7DCC500068C327 /* TARadioButtonsInput.swift */,
+				5E50A0E51B7DCE580068C327 /* TAOptionView.swift */,
 			);
 			name = RadioInput;
 			sourceTree = "<group>";
@@ -165,9 +222,9 @@
 		5E5F7C471B876FDB00501545 /* LinksInput */ = {
 			isa = PBXGroup;
 			children = (
-				5E5F7C3D1B86270A00501545 /* LinksInput.swift */,
-				5E5F7C3F1B8632AC00501545 /* AddLinkViewController.swift */,
-				5E5F7C401B8632AC00501545 /* AddLinkViewController.xib */,
+				5E5F7C3D1B86270A00501545 /* TALinksInput.swift */,
+				5E5F7C3F1B8632AC00501545 /* TAAddLinkViewController.swift */,
+				5E5F7C401B8632AC00501545 /* TAAddLinkViewController.xib */,
 			);
 			name = LinksInput;
 			sourceTree = "<group>";
@@ -175,11 +232,66 @@
 		5E5F7C481B876FE700501545 /* Dropdowns */ = {
 			isa = PBXGroup;
 			children = (
-				5E50A0E71B7E52770068C327 /* DropdownInput.swift */,
-				5E5F7C451B876E4E00501545 /* DropdownOptionsInput.swift */,
-				5E5F7C491B876FF700501545 /* DateInput.swift */,
+				5E50A0E71B7E52770068C327 /* TADropdownInput.swift */,
+				5E5F7C451B876E4E00501545 /* TADropdownOptionsInput.swift */,
+				5E5F7C491B876FF700501545 /* TADateInput.swift */,
 			);
 			name = Dropdowns;
+			sourceTree = "<group>";
+		};
+		5EE0A67E1B8CBAD500A92E8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5EE0A67F1B8CBAD500A92E8D /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5EE0A67F1B8CBAD500A92E8D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5EE0A6801B8CBAD500A92E8D /* icoAdd.png */,
+				5EE0A6811B8CBAD500A92E8D /* icoAdd@2x.png */,
+				5EE0A6821B8CBAD500A92E8D /* icoAdd@3x.png */,
+				5EE0A6831B8CBAD500A92E8D /* icoChecked.png */,
+				5EE0A6841B8CBAD500A92E8D /* icoChecked@2x.png */,
+				5EE0A6851B8CBAD500A92E8D /* icoChecked@3x.png */,
+				5EE0A6861B8CBAD500A92E8D /* icoCompleted.png */,
+				5EE0A6871B8CBAD500A92E8D /* icoCompleted@2x.png */,
+				5EE0A6881B8CBAD500A92E8D /* icoCompleted@3x.png */,
+				5EE0A6891B8CBAD500A92E8D /* icoDecrease.png */,
+				5EE0A68A1B8CBAD500A92E8D /* icoDecrease@2x.png */,
+				5EE0A68B1B8CBAD500A92E8D /* icoDecrease@3x.png */,
+				5EE0A68C1B8CBAD500A92E8D /* icoDeletePhoto.png */,
+				5EE0A68D1B8CBAD500A92E8D /* icoDeletePhoto@2x.png */,
+				5EE0A68E1B8CBAD500A92E8D /* icoDeletePhoto@3x.png */,
+				5EE0A68F1B8CBAD500A92E8D /* icoExpand.png */,
+				5EE0A6901B8CBAD500A92E8D /* icoExpand@2x.png */,
+				5EE0A6911B8CBAD500A92E8D /* icoExpand@3x.png */,
+				5EE0A6921B8CBAD500A92E8D /* icoIncrease.png */,
+				5EE0A6931B8CBAD500A92E8D /* icoIncrease@2x.png */,
+				5EE0A6941B8CBAD500A92E8D /* icoIncrease@3x.png */,
+				5EE0A6951B8CBAD500A92E8D /* icoInfo.png */,
+				5EE0A6961B8CBAD500A92E8D /* icoInfo@2x.png */,
+				5EE0A6971B8CBAD500A92E8D /* icoInfo@3x.png */,
+				5EE0A6981B8CBAD500A92E8D /* icoPhoto.png */,
+				5EE0A6991B8CBAD500A92E8D /* icoPhoto@2x.png */,
+				5EE0A69A1B8CBAD500A92E8D /* icoPhoto@3x.png */,
+				5EE0A69B1B8CBAD500A92E8D /* icoSearchLocate.png */,
+				5EE0A69C1B8CBAD500A92E8D /* icoSearchLocate@2x.png */,
+				5EE0A69D1B8CBAD500A92E8D /* icoSearchLocate@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5EE0A6C01B8DC93A00A92E8D /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				5EE0A6BE1B8DC59A00A92E8D /* TAFormValidator.swift */,
+				5EE0A6C11B8DC96800A92E8D /* TAInputValidator.swift */,
+				5EE0A6C31B8DE98600A92E8D /* TAFormError.swift */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		5EF4D1681B7B754600A95590 = {
@@ -205,21 +317,17 @@
 		5EF4D1731B7B754600A95590 /* TAFormGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				5E5F7C351B860B8600501545 /* greenCheck.png */,
-				5E5F7C361B860B8600501545 /* greenCheck@2x.png */,
-				5E5F7C371B860B8600501545 /* greenCheck@3x.png */,
-				5E50A0E91B7E54860068C327 /* icoAdd.png */,
-				5E50A0EA1B7E54860068C327 /* icoAdd@2x.png */,
-				5E50A0EB1B7E54860068C327 /* icoAdd@3x.png */,
+				5EE0A67E1B8CBAD500A92E8D /* Resources */,
 				5EF4D1761B7B754600A95590 /* AppDelegate.swift */,
 				5EF4D19A1B7B8ABC00A95590 /* BridgingHeader.h */,
 				5EF4D1781B7B754600A95590 /* ViewController.swift */,
-				5EF4D1961B7B7EDB00A95590 /* FormViewController.swift */,
-				5EF4D19B1B7B94B100A95590 /* FormBuilder.swift */,
-				5EF4D19D1B7BADAF00A95590 /* InputBuilder.swift */,
-				5E50A0D51B7CC5B90068C327 /* SectionWrapperView.swift */,
-				5EF4D1981B7B888D00A95590 /* Form.swift */,
-				5E5F7C4B1B8B077900501545 /* DefaultFormHeaderView.swift */,
+				5EF4D1961B7B7EDB00A95590 /* TAFormViewController.swift */,
+				5EF4D19B1B7B94B100A95590 /* TAFormBuilder.swift */,
+				5EE0A6C01B8DC93A00A92E8D /* Validation */,
+				5EF4D19D1B7BADAF00A95590 /* TAInputBuilder.swift */,
+				5E50A0D51B7CC5B90068C327 /* TASectionWrapperView.swift */,
+				5EF4D1981B7B888D00A95590 /* TAForm.swift */,
+				5E5F7C4B1B8B077900501545 /* TADefaultFormHeaderView.swift */,
 				5E50A0D71B7CCA380068C327 /* Defaults Inputs */,
 				5EF4D17A1B7B754600A95590 /* Main.storyboard */,
 				5EF4D17D1B7B754600A95590 /* Images.xcassets */,
@@ -344,16 +452,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E5F7C3A1B860B8600501545 /* greenCheck@3x.png in Resources */,
 				5EF4D17C1B7B754600A95590 /* Main.storyboard in Resources */,
-				5E50A0EE1B7E54860068C327 /* icoAdd@3x.png in Resources */,
-				5E50A0EC1B7E54860068C327 /* icoAdd.png in Resources */,
-				5E5F7C421B8632AC00501545 /* AddLinkViewController.xib in Resources */,
-				5E50A0ED1B7E54860068C327 /* icoAdd@2x.png in Resources */,
-				5E5F7C381B860B8600501545 /* greenCheck.png in Resources */,
-				5E5F7C391B860B8600501545 /* greenCheck@2x.png in Resources */,
+				5EE0A6BB1B8CBAD500A92E8D /* icoSearchLocate@3x.png in Resources */,
+				5E5F7C421B8632AC00501545 /* TAAddLinkViewController.xib in Resources */,
+				5EE0A6A81B8CBAD500A92E8D /* icoDecrease@2x.png in Resources */,
+				5EE0A6A41B8CBAD500A92E8D /* icoCompleted.png in Resources */,
+				5EE0A6AB1B8CBAD500A92E8D /* icoDeletePhoto@2x.png in Resources */,
+				5EE0A6B01B8CBAD500A92E8D /* icoIncrease.png in Resources */,
+				5EE0A6BA1B8CBAD500A92E8D /* icoSearchLocate@2x.png in Resources */,
+				5EE0A6AA1B8CBAD500A92E8D /* icoDeletePhoto.png in Resources */,
+				5EE0A6A21B8CBAD500A92E8D /* icoChecked@2x.png in Resources */,
 				5EF4D1811B7B754600A95590 /* LaunchScreen.xib in Resources */,
+				5EE0A6A11B8CBAD500A92E8D /* icoChecked.png in Resources */,
+				5EE0A6A91B8CBAD500A92E8D /* icoDecrease@3x.png in Resources */,
+				5EE0A6B51B8CBAD500A92E8D /* icoInfo@3x.png in Resources */,
+				5EE0A6A01B8CBAD500A92E8D /* icoAdd@3x.png in Resources */,
+				5EE0A6B11B8CBAD500A92E8D /* icoIncrease@2x.png in Resources */,
 				5EF4D17E1B7B754600A95590 /* Images.xcassets in Resources */,
+				5EE0A6B91B8CBAD500A92E8D /* icoSearchLocate.png in Resources */,
+				5EE0A6B81B8CBAD500A92E8D /* icoPhoto@3x.png in Resources */,
+				5EE0A6B71B8CBAD500A92E8D /* icoPhoto@2x.png in Resources */,
+				5EE0A6B41B8CBAD500A92E8D /* icoInfo@2x.png in Resources */,
+				5EE0A6A51B8CBAD500A92E8D /* icoCompleted@2x.png in Resources */,
+				5EE0A6A71B8CBAD500A92E8D /* icoDecrease.png in Resources */,
+				5EE0A69F1B8CBAD500A92E8D /* icoAdd@2x.png in Resources */,
+				5EE0A6B21B8CBAD500A92E8D /* icoIncrease@3x.png in Resources */,
+				5EE0A6AD1B8CBAD500A92E8D /* icoExpand.png in Resources */,
+				5EE0A69E1B8CBAD500A92E8D /* icoAdd.png in Resources */,
+				5EE0A6A61B8CBAD500A92E8D /* icoCompleted@3x.png in Resources */,
+				5EE0A6AE1B8CBAD500A92E8D /* icoExpand@2x.png in Resources */,
+				5EE0A6A31B8CBAD500A92E8D /* icoChecked@3x.png in Resources */,
+				5EE0A6AC1B8CBAD500A92E8D /* icoDeletePhoto@3x.png in Resources */,
+				5EE0A6B61B8CBAD500A92E8D /* icoPhoto.png in Resources */,
+				5EE0A6AF1B8CBAD500A92E8D /* icoExpand@3x.png in Resources */,
+				5EE0A6B31B8CBAD500A92E8D /* icoInfo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,29 +536,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E5F7C4A1B876FF700501545 /* DateInput.swift in Sources */,
-				5EF4D1971B7B7EDB00A95590 /* FormViewController.swift in Sources */,
-				5E5F7C411B8632AC00501545 /* AddLinkViewController.swift in Sources */,
-				5EF4D1991B7B888D00A95590 /* Form.swift in Sources */,
-				5E50A0DD1B7CF76C0068C327 /* PhoneInput.swift in Sources */,
-				5EF4D19C1B7B94B100A95590 /* FormBuilder.swift in Sources */,
-				5E50A0D41B7C9CE40068C327 /* EmailInput.swift in Sources */,
-				5E50A0DB1B7CF7470068C327 /* TwitterInput.swift in Sources */,
-				5E50A0D61B7CC5B90068C327 /* SectionWrapperView.swift in Sources */,
-				5E5F7C4C1B8B077900501545 /* DefaultFormHeaderView.swift in Sources */,
-				5E50A0DF1B7CF79D0068C327 /* SecureInput.swift in Sources */,
-				5E50A0E31B7DCC500068C327 /* RadioButtonsInput.swift in Sources */,
-				5E50A0E11B7CF7D90068C327 /* NumberInput.swift in Sources */,
+				5E5F7C4A1B876FF700501545 /* TADateInput.swift in Sources */,
+				5EF4D1971B7B7EDB00A95590 /* TAFormViewController.swift in Sources */,
+				5E5F7C411B8632AC00501545 /* TAAddLinkViewController.swift in Sources */,
+				5EF4D1991B7B888D00A95590 /* TAForm.swift in Sources */,
+				5E50A0DD1B7CF76C0068C327 /* TAPhoneInput.swift in Sources */,
+				5EE0A6C21B8DC96800A92E8D /* TAInputValidator.swift in Sources */,
+				5EF4D19C1B7B94B100A95590 /* TAFormBuilder.swift in Sources */,
+				5E50A0D41B7C9CE40068C327 /* TAEmailInput.swift in Sources */,
+				5E50A0DB1B7CF7470068C327 /* TATwitterInput.swift in Sources */,
+				5EE0A6C41B8DE98600A92E8D /* TAFormError.swift in Sources */,
+				5E50A0D61B7CC5B90068C327 /* TASectionWrapperView.swift in Sources */,
+				5E5F7C4C1B8B077900501545 /* TADefaultFormHeaderView.swift in Sources */,
+				5EE0A6BF1B8DC59A00A92E8D /* TAFormValidator.swift in Sources */,
+				5E50A0DF1B7CF79D0068C327 /* TASecureInput.swift in Sources */,
+				5E50A0E31B7DCC500068C327 /* TARadioButtonsInput.swift in Sources */,
+				5E50A0E11B7CF7D90068C327 /* TANumberInput.swift in Sources */,
 				5EF4D1791B7B754600A95590 /* ViewController.swift in Sources */,
-				5E5F7C441B870D8B00501545 /* URLInput.swift in Sources */,
-				5E50A0E81B7E52770068C327 /* DropdownInput.swift in Sources */,
-				5E5F7C461B876E4E00501545 /* DropdownOptionsInput.swift in Sources */,
-				5EF4D19E1B7BADAF00A95590 /* InputBuilder.swift in Sources */,
+				5E5F7C441B870D8B00501545 /* TAURLInput.swift in Sources */,
+				5E50A0E81B7E52770068C327 /* TADropdownInput.swift in Sources */,
+				5EE0A6BD1B8CC2C400A92E8D /* TAStepperInput.swift in Sources */,
+				5E5F7C461B876E4E00501545 /* TADropdownOptionsInput.swift in Sources */,
+				5EF4D19E1B7BADAF00A95590 /* TAInputBuilder.swift in Sources */,
 				5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */,
-				5E5F7C3E1B86270A00501545 /* LinksInput.swift in Sources */,
-				5E5F7C341B85D9ED00501545 /* ImageInput.swift in Sources */,
-				5E50A0E61B7DCE580068C327 /* OptionView.swift in Sources */,
-				5EF4D1A01B7C829200A95590 /* TextInput.swift in Sources */,
+				5E5F7C3E1B86270A00501545 /* TALinksInput.swift in Sources */,
+				5E5F7C341B85D9ED00501545 /* TAImageInput.swift in Sources */,
+				5E50A0E61B7DCE580068C327 /* TAOptionView.swift in Sources */,
+				5EF4D1A01B7C829200A95590 /* TATextInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
