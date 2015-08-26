@@ -61,6 +61,7 @@ class TAStepperInput: UIView {
         minValue = 0
         
         backgroundColor = UIColor.whiteColor()
+        clipsToBounds   = true
 
         addSubview(label)
         label.font            = UIFont.systemFontOfSize(14)
@@ -185,6 +186,8 @@ class TAStepperInput: UIView {
     override func updateConstraints() {
         if !didSetupConstraints {
             
+            autoSetDimension(.Height, toSize: 50, relation: NSLayoutRelation.GreaterThanOrEqual)
+
             decreaseBtn.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15, 0, 0), excludingEdge: .Trailing)
             increaseBtn.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 0, 0, 15), excludingEdge: .Leading)
             

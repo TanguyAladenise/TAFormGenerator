@@ -22,7 +22,7 @@ class TAURLInput: TATextInput {
     // MARK: - Inpur protocol
     
     
-    override func inputValue() -> String? {
+    override func inputValue() -> AnyObject? {
         if textField.text == preset {
             return nil
         } else {

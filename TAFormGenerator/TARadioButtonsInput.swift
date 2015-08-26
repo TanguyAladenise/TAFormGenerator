@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TARadioButtonsInput: UIView {
+class TARadioButtonsInput: UIView, TAInputProtocol {
     
     private var optionViews: [UIView] = []
     private var selectedOptionView: TAOptionView!
@@ -80,6 +80,13 @@ class TARadioButtonsInput: UIView {
         optionsWrapper.setTranslatesAutoresizingMaskIntoConstraints(false)
     }
     
+    
+    // MARK: - Input protocol
+    
+    
+    func inputValue() -> AnyObject? {
+        return selectedOptionView.value
+    }
     
     // MARK: - Option setup
     

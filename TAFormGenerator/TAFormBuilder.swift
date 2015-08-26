@@ -38,6 +38,7 @@ class TAFormBuilder {
             form.orderedSectionViews.append(sectionHeaderView)
             
             let sectionWrapper = TASectionWrapperView()
+            sectionWrapper.clipsToBounds = true
             insertSectionView(sectionWrapper, inView: formView)
             
             // Store view in collections for reusability

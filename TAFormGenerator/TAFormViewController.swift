@@ -8,12 +8,22 @@
 
 import UIKit
 
+
+@objc protocol TAFormViewControllerDelegate: class {
+    optional func formShouldBeValidated(formViewController: TAFormViewController) -> Bool
+    func formDidNotValidate(formViewController: TAFormViewController)
+    func formDidValidate(formViewController: TAFormViewController)
+}
+
+
 class TAFormViewController: UIViewController {
     
     private let form: TAForm = TAForm()
 
     var formBuilder: TAFormBuilder!
     var formValidator: TAFormValidator!
+    
+    weak var delegate: TAFormViewControllerDelegate?
     
     // UI
     
@@ -61,8 +71,8 @@ class TAFormViewController: UIViewController {
         scrollView.addSubview(validateFormButton)
         
         // Must be init after formView and scrollview
-        formBuilder = TAFormBuilder(form: form, formView: scrollView)
-        TAFormValidator(form: form)
+        formBuilder   = TAFormBuilder(form: form, formView: formView)
+        formValidator = TAFormValidator(form: form)
     }
     
     
@@ -97,6 +107,27 @@ class TAFormViewController: UIViewController {
         view.endEditing(true)
     }
     
+    
+    func validateButtonPressed() {
+        var shouldValidateForm = delegate?.formShouldBeValidated?(self)
+        if shouldValidateForm == nil {
+            // If delegate doesn't specify form validation, form will automatically be validated
+            shouldValidateForm = true
+        }
+        
+        if shouldValidateForm! {
+            let (valid, fieldID, error) = formValidator.validateForm()
+            if valid {
+                delegate?.formDidValidate(self)
+            } else {
+                delegate?.formDidNotValidate(self)
+            }
+            println((valid, fieldID, error))
+        } else {
+            delegate?.formDidValidate(self)
+        }
+        
+    }
     
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TAImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TAImageInput: UIView, TAInputProtocol, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // UI
     private let label: UILabel!                 = UILabel(forAutoLayout: ())
@@ -76,6 +76,13 @@ class TAImageInput: UIView, UIActionSheetDelegate, UIImagePickerControllerDelega
         addSubview(self.border)
     }
     
+    
+    // MARK: - Input protocol
+    
+    
+    func inputValue() -> AnyObject? {
+        return imageView.image
+    }
     
     // MARK: - UI Actions
     

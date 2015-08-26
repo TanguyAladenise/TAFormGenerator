@@ -89,9 +89,10 @@ class TAAddLinkViewController: UIViewController {
     
     
     func getLink() -> TALink? {
-        if let type = dropdown.inputValue(), url = urlInput.inputValue() {
+        if let type = dropdown.inputValue() as? String, url = urlInput.inputValue() as? String {
             return TALink(type: type, url: url)
         } else {
+            println("Invalid format to create a TALink object")
             return nil
         }
     }

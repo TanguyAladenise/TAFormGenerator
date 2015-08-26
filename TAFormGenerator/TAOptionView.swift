@@ -23,6 +23,11 @@ class TAOptionView: UIView {
     
     private var label: UILabel = UILabel()
     
+    var value: String? {
+        get {
+            return label.text
+        }
+    }
     
     var optionLabel: String! {
         didSet{

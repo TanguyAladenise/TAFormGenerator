@@ -37,7 +37,7 @@ class TAInputValidator {
     var regex: String?
     
     
-    private var value: String!
+    private var value: AnyObject!
     
     private var error: NSError?
     
@@ -59,12 +59,17 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    func validate(value: String) -> (Bool, NSError?) {
+    func validate(value: AnyObject?) -> (Bool, NSError?) {
         
-        self.value = value
+        if let v: AnyObject = value {
+            self.value = v
+        } else {
+            self.value = ""
+        }
+        
         
         // Before starting heaving validation work check if input is not mandatory and its value is null
-        if !isMandatory && count(value) == 0 {
+        if !isMandatory && value == nil {
             return (true, nil)
         }
         
@@ -88,7 +93,16 @@ class TAInputValidator {
             return true
         }
         
-        let valid = count(value) > 0 ? true : false
+        // From this point value is mandatory //
+        
+        var valid = true
+        
+        if value == nil {
+            valid = false
+        } else if let string = value as? String {
+            valid = count(string) > 0 ? true : false
+        }
+        
         if !valid {
             error = NSError(domain: kTAFormErrorDomain, code: kFormErrorFieldMandatory, userInfo: userInfo(NSLocalizedString("Field is empty", comment: ""), localizedFailureReason: NSLocalizedString("Field is required", comment: "Required field validation")))
         }
@@ -103,7 +117,41 @@ class TAInputValidator {
     :returns: Validation result
     */
     private func validateLength() -> Bool {
-        return (checkMinimumLength() && checkMaximumLength())
+        if shouldValidateLength() {
+            return (checkString() && checkMinimumLength() && checkMaximumLength())
+        } else {
+            return true
+        }
+    }
+    
+    
+
+    /**
+    Make sure length checking is required
+    
+    :returns: Validation result
+    */
+    private func shouldValidateLength() -> Bool {
+        if minimumLength == nil && maximumLength == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    
+    /**
+    Check if value is of type String. To check before checking for lenght
+    
+    :returns: Validation result
+    */
+    private func checkString() -> Bool {
+        if let string = value as? String {
+            return true
+        } else {
+            error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextInvalid, userInfo: userInfo(NSLocalizedString("Value is invalid", comment: ""), localizedFailureReason: NSLocalizedString("Value is invalid", comment: "")))
+            return false
+        }
     }
     
     
@@ -115,7 +163,7 @@ class TAInputValidator {
     private func checkMinimumLength() -> Bool {
         // Test if value is required, otherwise value is valid
         if let minLength = minimumLength {
-            let valid = count(value) < minLength ? false : true
+            let valid = count(value as! String) < minLength ? false : true
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextTooShort, userInfo: userInfo(NSLocalizedString("Field is too short", comment: ""), localizedFailureReason: String(format: NSLocalizedString("at least %d characters", comment: "Minimum length field validation"), minLength)))
             }
@@ -134,7 +182,7 @@ class TAInputValidator {
     private func checkMaximumLength() -> Bool {
         // Test if value is required, otherwise value is valid
         if let maxLength = maximumLength {
-            let valid = count(value) > maxLength ? false : true
+            let valid = count(value as! String) > maxLength ? false : true
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextTooLong, userInfo: userInfo(NSLocalizedString("Field is too long", comment: ""), localizedFailureReason: String(format: NSLocalizedString("less than %d characters", comment: "Maximum length field validation"), maxLength)))
             }
@@ -172,7 +220,43 @@ class TAInputValidator {
     :returns: Validation result
     */
     private func validateNumber() -> Bool {
-        return (checkMinimumNumber() && checkMaximumNumber())
+        if shouldValidateNumber() {
+            return (checkNumber() && checkMinimumNumber() && checkMaximumNumber())
+        } else {
+            return true
+        }
+    }
+    
+    /**
+    Make sure number checking is required
+    
+    :returns: Validation result
+    */
+    private func shouldValidateNumber() -> Bool {
+        if minimumNumber == nil && minimumNumber == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    
+    /**
+    Check if value is a number. Use before validating min and max value
+    
+    :returns: Validation result
+    */
+    private func checkNumber() -> Bool {
+        // FIXME: - Number logic
+        // For the time being number values are passed as string and are only INT so validation is same as string
+        if checkString() {
+            if let number = (value as! String).toInt() {
+                return true
+            }
+        }
+        
+        error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberInvalid, userInfo: userInfo(NSLocalizedString("Number is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Number is not valid", comment: "Number field validation")))
+        return false
     }
     
     
@@ -184,16 +268,12 @@ class TAInputValidator {
     private func checkMinimumNumber() -> Bool {
         // Test if value is required, otherwise value is valid
         if let minNumber = minimumNumber {
-            if let v = value.toInt() {
-                let valid = v < minNumber ? false : true
-                if !valid {
-                    error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberLower, userInfo: userInfo(NSLocalizedString("Number too small", comment: ""), localizedFailureReason: String(format: NSLocalizedString("higher or equal to %d", comment: "Minimum number field validation"), minNumber)))
-                }
-                return valid
-            } else {
-                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberInvalid, userInfo: userInfo(NSLocalizedString("Number is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Number is not valid", comment: "Number field validation")))
-                return false
+            let v = (value as! String).toInt()
+            let valid = v < minNumber ? false : true
+            if !valid {
+                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberLower, userInfo: userInfo(NSLocalizedString("Number too small", comment: ""), localizedFailureReason: String(format: NSLocalizedString("higher or equal to %d", comment: "Minimum number field validation"), minNumber)))
             }
+            return valid
         } else {
             return true
         }
@@ -208,16 +288,13 @@ class TAInputValidator {
     private func checkMaximumNumber() -> Bool {
         // Test if value is required, otherwise value is valid
         if let maxNumber = maximumNumber {
-            if let v = value.toInt() {
-                let valid = v > maxNumber ? false : true
-                if !valid {
-                    error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberHigher, userInfo: userInfo(NSLocalizedString("Number is too big", comment: ""), localizedFailureReason: String(format: NSLocalizedString("lower or equal to %d", comment: "Maximum number field validation"), maxNumber)))
-                }
-                return valid
-            } else {
-                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberInvalid, userInfo: userInfo(NSLocalizedString("Number is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Number is not valid", comment: "Number field validation")))
-                return false
+            let v = (value as! String).toInt()
+            let valid = v > maxNumber ? false : true
+            if !valid {
+                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberHigher, userInfo: userInfo(NSLocalizedString("Number is too big", comment: ""), localizedFailureReason: String(format: NSLocalizedString("lower or equal to %d", comment: "Maximum number field validation"), maxNumber)))
             }
+            return valid
+            
         } else {
             return true
         }
@@ -230,9 +307,27 @@ class TAInputValidator {
     :returns: Validation result
     */
     private func validateDate() -> Bool {
-        return (checkMinimumDate() && checkMaximumDate())
+        if shouldValidateDate() {
+            return (checkMinimumDate() && checkMaximumDate())
+        } else {
+            return true
+        }
     }
     
+    
+    /**
+    Make sure date checking is required
+    
+    :returns: Validation result
+    */
+    private func shouldValidateDate() -> Bool {
+        if minimumDate == nil && maximumDate == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+
     
     /**
     Logic for minimum date validation
@@ -284,7 +379,6 @@ class TAInputValidator {
     }
     
     
-    
     /**
     Validate a given rule
     
@@ -295,19 +389,19 @@ class TAInputValidator {
     func validateRule(rule: TAInputTypeRule) -> Bool {
         switch rule {
         case .TypeEmail:
-            let valid = valueIsValidEmail()
+            let valid = validateEmail(value)
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorEmailInvalid, userInfo: userInfo(NSLocalizedString("Email is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Email is not valid", comment: "Email field validation")))
             }
             return valid
         case .TypeNumeric:
-            let valid = value.toInt() == nil ? false : true
+            let valid = checkNumber()
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberInvalid, userInfo: userInfo(NSLocalizedString("Number is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Number is not valid", comment: "Number field validation")))
             }
             return valid
         case .TypeAlphabetic:
-            let valid = value.toInt() == nil ? true : false
+            let valid = !checkNumber()
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextInvalid, userInfo: userInfo(NSLocalizedString("Text is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Text is not valid", comment: "Text field validation")))
             }
@@ -346,13 +440,19 @@ class TAInputValidator {
     
     :returns: Return a NSDate instance. If return nil, string is not date compatible
     */
-    func convertToDate() -> NSDate? {
-        var formatter       = NSDateFormatter()
-        formatter.locale    = NSLocale.currentLocale()
-        formatter.timeZone  = NSTimeZone.localTimeZone()
-        formatter.dateStyle = .MediumStyle
-        formatter.timeStyle = .NoStyle
-        return formatter.dateFromString(value)
+    private func convertToDate() -> NSDate? {
+        if let date = value as? NSDate {
+            return date
+        } else if let dateString = value as? String {
+            var formatter       = NSDateFormatter()
+            formatter.locale    = NSLocale.currentLocale()
+            formatter.timeZone  = NSTimeZone.localTimeZone()
+            formatter.dateStyle = .MediumStyle
+            formatter.timeStyle = .NoStyle
+            return formatter.dateFromString(dateString)
+        }
+        
+        return nil
     }
     
     
@@ -361,25 +461,37 @@ class TAInputValidator {
     
     :returns: Return a NSDate instance. If return nil, string is not date compatible
     */
-    func convertToDateTime() -> NSDate? {
-        var formatter       = NSDateFormatter()
-        formatter.locale    = NSLocale.currentLocale()
-        formatter.timeZone  = NSTimeZone.localTimeZone()
-        formatter.dateStyle = .MediumStyle
-        formatter.timeStyle = .ShortStyle
-        return formatter.dateFromString(value)
+    private func convertToDateTime() -> NSDate? {
+        if let date = value as? NSDate {
+            return date
+        } else if let dateString = value as? String {
+            var formatter       = NSDateFormatter()
+            formatter.locale    = NSLocale.currentLocale()
+            formatter.timeZone  = NSTimeZone.localTimeZone()
+            formatter.dateStyle = .MediumStyle
+            formatter.timeStyle = .ShortStyle
+            return formatter.dateFromString(dateString)
+        }
+        
+        return nil
     }
     
     
     /**
-    Validate a string as email format
+    Validate an email with a regex
+    
+    :param: email String to validate
     
     :returns: Validation result
     */
-    func valueIsValidEmail() -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        let emailTest  = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(value)
+    private func validateEmail(email: AnyObject) -> Bool {
+        if let email = email as? String {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+            let emailTest  = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluateWithObject(email)
+        } else {
+            return false
+        }
     }
     
     

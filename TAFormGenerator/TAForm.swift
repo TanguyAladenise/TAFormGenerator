@@ -12,14 +12,13 @@ import UIKit
 class TAForm {
     
     /// All view contained in the form and identified by an ID
-    var formSubviews: Dictionary<String, UIView> = Dictionary<String, UIView>()
+    var formSubviews: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
     
     /// All form subview ordered by time of insertion
     var orderedFormSubviews: [UIView] = []
     
     /// Section views references stored in order of appearance (usefull for layout)
     var orderedSectionViews: [UIView] = []
-    
     
     
     /**
@@ -36,5 +35,24 @@ class TAForm {
         }
         
         return true
+    }
+    
+    
+    /**
+    Return a value for a given ID
+    
+    :param: inputID Input ID to fetch value
+    
+    :returns: Value of input
+    */
+    func valueForInput(inputID: String) -> AnyObject? {
+        if let input = formSubviews[inputID] as? TAInputProtocol {
+            // FIXME: - to be removed
+            println(input.inputValue())
+            return input.inputValue()
+        } else {
+            println("Validation for fieldID \(inputID) impossible. Input doest not conform to protocol TAInputProtocol")
+            return nil
+        }
     }
 }

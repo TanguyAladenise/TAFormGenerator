@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TAInputProtocol {
-    func inputValue() -> String?
+    func inputValue() -> AnyObject?
 }
 
 
@@ -64,7 +64,7 @@ class TATextInput: UIView, TAInputProtocol, UITextFieldDelegate {
     // MARK: - Protocol
     
     
-    func inputValue() -> String? {
+    func inputValue() -> AnyObject? {
         if textField.text == "" {
             return nil
         } else {

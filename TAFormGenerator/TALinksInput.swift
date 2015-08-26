@@ -16,6 +16,7 @@ class TALinksInput: TATextInput, TAAddLinkControllerDelegate {
     weak var target: UIViewController?
     
     var linkViews: [UIView] = []
+    var links: [TALink] = []
     
 
     // MARK: - Lifecycle
@@ -53,6 +54,17 @@ class TALinksInput: TATextInput, TAAddLinkControllerDelegate {
     }
     
     
+    // MARK: - Input protocol
+    
+    
+    override func inputValue() -> AnyObject? {
+        let values: [String] = []
+        for link in links {
+            values.append(link)
+        }
+    }
+    
+    
     // MARK: - UI actions
     
     
@@ -85,6 +97,7 @@ class TALinksInput: TATextInput, TAAddLinkControllerDelegate {
         setConstraintsForLinkView(linkView)
         // Store for reuse
         linkViews.append(linkView)
+        links.append(link)
         
         // Animate
         UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
