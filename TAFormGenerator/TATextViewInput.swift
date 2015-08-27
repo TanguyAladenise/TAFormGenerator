@@ -10,12 +10,10 @@ import UIKit
 
 class TATextViewInput: UIView, TAInputProtocol, UITextViewDelegate {
 
-    private let textView: UITextView! = UITextView()
-    private var border: UIView  = UIView()
+    private let textView: UITextView! = UITextView(forAutoLayout: ())
+    private var border: UIView  = UIView(forAutoLayout: ())
     
     private var didSetupConstraints: Bool = false
-    
-    var textViewHeightConstraint: NSLayoutConstraint!
     
     var placeholder: String?
     

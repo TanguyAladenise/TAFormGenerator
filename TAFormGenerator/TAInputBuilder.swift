@@ -91,4 +91,9 @@ class TAInputBuilder {
     class func textViewInput(placeholder: String? = nil) -> TATextViewInput {
         return TATextViewInput(placeholder: placeholder)
     }
+    
+    
+    class func mapInput(coordinate: String?, target: UIViewController) -> TAMapInput {
+        return TAMapInput(coordinate: nil, target: target)
+    }
 }

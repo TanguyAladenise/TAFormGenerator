@@ -27,6 +27,7 @@ class ViewController: TAFormViewController, TAFormViewControllerDelegate {
         
         formBuilder.addInput(TAInputBuilder.textInputWithStyle(.TextField, placeholder: "text"), withID: "text", inSectionID: "Header1")
         formBuilder.addInput(TAInputBuilder.textViewInput(placeholder: "TextView"), withID: "TextView", inSectionID: "Header1")
+        formBuilder.addInput(TAInputBuilder.mapInput(nil, target: self), withID: "Map", inSectionID: "Header1")
 
         formBuilder.addInput(TAInputBuilder.textInputWithStyle(.TextEmailField, placeholder: "email"), withID: "email", inSectionID: "Header2")
         formBuilder.addInput(TAInputBuilder.textInputWithStyle(.TextPhoneField, placeholder: "phone"), withID: "phone", inSectionID: "Header2")

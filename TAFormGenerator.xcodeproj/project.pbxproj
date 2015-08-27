@@ -25,6 +25,9 @@
 		5E5F7C4A1B876FF700501545 /* TADateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C491B876FF700501545 /* TADateInput.swift */; };
 		5E5F7C4C1B8B077900501545 /* TADefaultFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F7C4B1B8B077900501545 /* TADefaultFormHeaderView.swift */; };
 		5EAD87881B8F479A00D81374 /* TATextViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD87871B8F479A00D81374 /* TATextViewInput.swift */; };
+		5EAD878A1B8F645C00D81374 /* TAMapInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD87891B8F645C00D81374 /* TAMapInput.swift */; };
+		5EAD878D1B8F6A6C00D81374 /* MapViewPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD878B1B8F6A6C00D81374 /* MapViewPickerController.swift */; };
+		5EAD878E1B8F6A6C00D81374 /* MapViewPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD878C1B8F6A6C00D81374 /* MapViewPickerController.xib */; };
 		5EE0A69E1B8CBAD500A92E8D /* icoAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6801B8CBAD500A92E8D /* icoAdd.png */; };
 		5EE0A69F1B8CBAD500A92E8D /* icoAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6811B8CBAD500A92E8D /* icoAdd@2x.png */; };
 		5EE0A6A01B8CBAD500A92E8D /* icoAdd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE0A6821B8CBAD500A92E8D /* icoAdd@3x.png */; };
@@ -104,6 +107,9 @@
 		5E5F7C491B876FF700501545 /* TADateInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADateInput.swift; sourceTree = "<group>"; };
 		5E5F7C4B1B8B077900501545 /* TADefaultFormHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADefaultFormHeaderView.swift; sourceTree = "<group>"; };
 		5EAD87871B8F479A00D81374 /* TATextViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATextViewInput.swift; sourceTree = "<group>"; };
+		5EAD87891B8F645C00D81374 /* TAMapInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAMapInput.swift; sourceTree = "<group>"; };
+		5EAD878B1B8F6A6C00D81374 /* MapViewPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewPickerController.swift; sourceTree = "<group>"; };
+		5EAD878C1B8F6A6C00D81374 /* MapViewPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewPickerController.xib; sourceTree = "<group>"; };
 		5EE0A6801B8CBAD500A92E8D /* icoAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoAdd.png; sourceTree = "<group>"; };
 		5EE0A6811B8CBAD500A92E8D /* icoAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@2x.png"; sourceTree = "<group>"; };
 		5EE0A6821B8CBAD500A92E8D /* icoAdd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoAdd@3x.png"; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 				5E5F7C331B85D9ED00501545 /* TAImageInput.swift */,
 				5EE0A6BC1B8CC2C400A92E8D /* TAStepperInput.swift */,
 				5EAD87871B8F479A00D81374 /* TATextViewInput.swift */,
+				5EAD87891B8F645C00D81374 /* TAMapInput.swift */,
+				5EAD878B1B8F6A6C00D81374 /* MapViewPickerController.swift */,
+				5EAD878C1B8F6A6C00D81374 /* MapViewPickerController.xib */,
 			);
 			name = "Defaults Inputs";
 			sourceTree = "<group>";
@@ -463,6 +472,7 @@
 				5EE0A6AB1B8CBAD500A92E8D /* icoDeletePhoto@2x.png in Resources */,
 				5EE0A6B01B8CBAD500A92E8D /* icoIncrease.png in Resources */,
 				5EE0A6BA1B8CBAD500A92E8D /* icoSearchLocate@2x.png in Resources */,
+				5EAD878E1B8F6A6C00D81374 /* MapViewPickerController.xib in Resources */,
 				5EE0A6AA1B8CBAD500A92E8D /* icoDeletePhoto.png in Resources */,
 				5EE0A6A21B8CBAD500A92E8D /* icoChecked@2x.png in Resources */,
 				5EF4D1811B7B754600A95590 /* LaunchScreen.xib in Resources */,
@@ -563,8 +573,10 @@
 				5EF4D19E1B7BADAF00A95590 /* TAInputBuilder.swift in Sources */,
 				5EF4D1771B7B754600A95590 /* AppDelegate.swift in Sources */,
 				5E5F7C3E1B86270A00501545 /* TALinksInput.swift in Sources */,
+				5EAD878A1B8F645C00D81374 /* TAMapInput.swift in Sources */,
 				5E5F7C341B85D9ED00501545 /* TAImageInput.swift in Sources */,
 				5EAD87881B8F479A00D81374 /* TATextViewInput.swift in Sources */,
+				5EAD878D1B8F6A6C00D81374 /* MapViewPickerController.swift in Sources */,
 				5E50A0E61B7DCE580068C327 /* TAOptionView.swift in Sources */,
 				5EF4D1A01B7C829200A95590 /* TATextInput.swift in Sources */,
 			);

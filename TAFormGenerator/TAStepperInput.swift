@@ -11,10 +11,10 @@ import UIKit
 class TAStepperInput: UIView, TAInputProtocol {
 
     // UI
-    private let label: UILabel! = UILabel()
+    private let label: UILabel! = UILabel(forAutoLayout: ())
     private let increaseBtn = UIButton.buttonWithType(.Custom) as! UIButton
     private let decreaseBtn = UIButton.buttonWithType(.Custom) as! UIButton
-    private let border: UIView  = UIView()
+    private var border: UIView  = UIView(forAutoLayout: ())
     
     // Constraints
     private var didSetupConstraints: Bool = false
