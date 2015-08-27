@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol TAInputProtocol {
-    func inputValue() -> AnyObject?
-}
-
 
 class TATextInput: UIView, TAInputProtocol, UITextFieldDelegate {
 
@@ -45,6 +41,8 @@ class TATextInput: UIView, TAInputProtocol, UITextFieldDelegate {
         
         setup()
     }
+    
+    
     
     
     func setup() {

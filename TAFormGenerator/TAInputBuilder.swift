@@ -86,4 +86,9 @@ class TAInputBuilder {
     class func stepperInput(placeholder: String) -> TAStepperInput {
         return TAStepperInput(placeholder: placeholder)
     }
+    
+    
+    class func textViewInput(placeholder: String? = nil) -> TATextViewInput {
+        return TATextViewInput(placeholder: placeholder)
+    }
 }

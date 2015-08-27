@@ -16,6 +16,11 @@ import UIKit
 }
 
 
+protocol TAInputProtocol {
+    func inputValue() -> AnyObject?
+}
+
+
 class TAFormViewController: UIViewController {
     
     private let form: TAForm = TAForm()
@@ -125,6 +130,5 @@ class TAFormViewController: UIViewController {
         } else {
             delegate?.formDidValidate(self)
         }
-        
     }
 }
