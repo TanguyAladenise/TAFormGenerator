@@ -18,6 +18,11 @@ enum TAInputTypeRule: Int {
 }
 
 
+protocol TAInputValidatorProtocol {
+    func validateInput(inputValidator: TAInputValidator) -> (Bool, NSError?)
+}
+
+
 class TAInputValidator {
     
     
@@ -79,7 +84,7 @@ class TAInputValidator {
             }
         }
         
-        return (validateMandatory() && validateLength() && validateNumber() && validateDate() && validateRegex(), error)
+        return (validateMandatory(self.value) && validateLength(self.value) && validateNumber() && validateDate() && validateRegex(self.value), error)
     }
     
     
@@ -88,7 +93,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func validateMandatory() -> Bool {
+    func validateMandatory(value: AnyObject?) -> Bool {
         if !isMandatory {
             return true
         }
@@ -101,6 +106,8 @@ class TAInputValidator {
             valid = false
         } else if let string = value as? String {
             valid = count(string) > 0 ? true : false
+        } else if let array = value as? [AnyObject] {
+            valid = array.count > 0 ? true : false
         }
         
         if !valid {
@@ -116,9 +123,9 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func validateLength() -> Bool {
+    private func validateLength(value: AnyObject?) -> Bool {
         if shouldValidateLength() {
-            return (checkString() && checkMinimumLength() && checkMaximumLength())
+            return (checkString(value) && checkMinimumLength(value) && checkMaximumLength(value))
         } else {
             return true
         }
@@ -145,7 +152,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkString() -> Bool {
+    private func checkString(value: AnyObject?) -> Bool {
         if let string = value as? String {
             return true
         } else {
@@ -160,7 +167,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkMinimumLength() -> Bool {
+    private func checkMinimumLength(value: AnyObject?) -> Bool {
         // Test if value is required, otherwise value is valid
         if let minLength = minimumLength {
             let valid = count(value as! String) < minLength ? false : true
@@ -179,7 +186,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkMaximumLength() -> Bool {
+    private func checkMaximumLength(value: AnyObject?) -> Bool {
         // Test if value is required, otherwise value is valid
         if let maxLength = maximumLength {
             let valid = count(value as! String) > maxLength ? false : true
@@ -198,13 +205,13 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func validateRegex() -> Bool {
+    private func validateRegex(value: AnyObject?) -> Bool {
         if let regex = regex {
             let testRegex  = NSPredicate(format:"SELF MATCHES %@", regex)
-            let valid = testRegex.evaluateWithObject(value)
+            let valid = testRegex.evaluateWithObject(value!)
             
             if !valid {
-                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextInvalid, userInfo: userInfo(NSLocalizedString("Text is invalid", comment: ""), localizedFailureReason: NSLocalizedString("Text is invalid", comment: "")))
+                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextInvalid, userInfo: userInfo(NSLocalizedString("Value is invalid", comment: ""), localizedFailureReason: NSLocalizedString("Value is invalid", comment: "")))
             }
             
             return valid
@@ -221,7 +228,7 @@ class TAInputValidator {
     */
     private func validateNumber() -> Bool {
         if shouldValidateNumber() {
-            return (checkNumber() && checkMinimumNumber() && checkMaximumNumber())
+            return (checkNumber(self.value) && checkMinimumNumber(self.value) && checkMaximumNumber(self.value))
         } else {
             return true
         }
@@ -246,10 +253,10 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkNumber() -> Bool {
+    private func checkNumber(value: AnyObject?) -> Bool {
         // FIXME: - Number logic
         // For the time being number values are passed as string and are only INT so validation is same as string
-        if checkString() {
+        if checkString(value) {
             if let number = (value as! String).toInt() {
                 return true
             }
@@ -265,7 +272,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkMinimumNumber() -> Bool {
+    private func checkMinimumNumber(value: AnyObject?) -> Bool {
         // Test if value is required, otherwise value is valid
         if let minNumber = minimumNumber {
             let v = (value as! String).toInt()
@@ -285,7 +292,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkMaximumNumber() -> Bool {
+    private func checkMaximumNumber(value: AnyObject?) -> Bool {
         // Test if value is required, otherwise value is valid
         if let maxNumber = maximumNumber {
             let v = (value as! String).toInt()
@@ -308,7 +315,7 @@ class TAInputValidator {
     */
     private func validateDate() -> Bool {
         if shouldValidateDate() {
-            return (checkMinimumDate() && checkMaximumDate())
+            return (checkMinimumDate(self.value) && checkMaximumDate(self.value))
         } else {
             return true
         }
@@ -334,10 +341,11 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkMinimumDate() -> Bool {
+    private func checkMinimumDate(value: AnyObject?) -> Bool {
         // Test if value is required, otherwise value is valid
         if let minDate = minimumDate {
-            var aDate = find(typeRules, TAInputTypeRule.TypeDateTime) != nil ? convertToDateTime() : convertToDate()
+            println(value)
+            var aDate = find(typeRules, TAInputTypeRule.TypeDateTime) != nil ? convertToDateTime(value) : convertToDate(value)
             if let date = aDate {
                 let valid = minDate.compare(date) == NSComparisonResult.OrderedDescending ? false : true
                 if !valid {
@@ -359,10 +367,10 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func checkMaximumDate() -> Bool {
+    private func checkMaximumDate(value: AnyObject?) -> Bool {
         // Test if value is required, otherwise value is valid
         if let maxDate = maximumDate {
-            var aDate = find(typeRules, TAInputTypeRule.TypeDateTime) != nil ? convertToDateTime() : convertToDate()
+            var aDate = find(typeRules, TAInputTypeRule.TypeDateTime) != nil ? convertToDateTime(value) : convertToDate(value)
             if let date = aDate {
                 let valid = maxDate.compare(date) == NSComparisonResult.OrderedAscending ? false : true
                 if !valid {
@@ -395,25 +403,25 @@ class TAInputValidator {
             }
             return valid
         case .TypeNumeric:
-            let valid = checkNumber()
+            let valid = checkNumber(self.value)
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorNumberInvalid, userInfo: userInfo(NSLocalizedString("Number is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Number is not valid", comment: "Number field validation")))
             }
             return valid
         case .TypeAlphabetic:
-            let valid = !checkNumber()
+            let valid = !checkNumber(self.value)
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorTextInvalid, userInfo: userInfo(NSLocalizedString("Text is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Text is not valid", comment: "Text field validation")))
             }
             return valid
         case .TypedDate:
-            let valid = convertToDate() == nil ? false : true
+            let valid = convertToDate(self.value) == nil ? false : true
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorDateInvalid, userInfo: userInfo(NSLocalizedString("Date is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Date is not valid", comment: "Date field validation")))
             }
             return valid
         case .TypeDateTime:
-            let valid = convertToDateTime() == nil ? false : true
+            let valid = convertToDateTime(self.value) == nil ? false : true
             if !valid {
                 error = NSError(domain: kTAFormErrorDomain, code: kFormErrorDateInvalid, userInfo: userInfo(NSLocalizedString("Date is not valid", comment: ""), localizedFailureReason: NSLocalizedString("Date is not valid", comment: "Date field validation")))
             }
@@ -440,7 +448,7 @@ class TAInputValidator {
     
     :returns: Return a NSDate instance. If return nil, string is not date compatible
     */
-    private func convertToDate() -> NSDate? {
+    private func convertToDate(value: AnyObject?) -> NSDate? {
         if let date = value as? NSDate {
             return date
         } else if let dateString = value as? String {
@@ -461,7 +469,7 @@ class TAInputValidator {
     
     :returns: Return a NSDate instance. If return nil, string is not date compatible
     */
-    private func convertToDateTime() -> NSDate? {
+    private func convertToDateTime(value: AnyObject?) -> NSDate? {
         if let date = value as? NSDate {
             return date
         } else if let dateString = value as? String {
@@ -484,7 +492,7 @@ class TAInputValidator {
     
     :returns: Validation result
     */
-    private func validateEmail(email: AnyObject) -> Bool {
+    func validateEmail(email: AnyObject?) -> Bool {
         if let email = email as? String {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
             let emailTest  = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -492,6 +500,26 @@ class TAInputValidator {
         } else {
             return false
         }
+    }
+    
+    
+    /**
+    Validate a url type
+    
+    :param: url URL to validate
+    
+    :returns: Validation result
+    */
+    func validateURL(url: AnyObject?) -> Bool {
+        if let v = url as? String {
+            if let url = NSURL(string: v) {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        return false
     }
     
     

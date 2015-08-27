@@ -46,11 +46,15 @@ class TAFormValidator {
         for (aValidator) in inputValidators {
             
             if let inputID = aValidator["inputID"] as? String, let validator = aValidator["inputValidator"] as? TAInputValidator {
-                
-                let value: AnyObject? = form.valueForInput(inputID)
-                let (valid, error) = validator.validate(value)
-                if !valid {
-                    return (valid, inputID, error)
+                var result: (valid: Bool, error: NSError?)
+                if let input = form.inputWithID(inputID) as? TAInputValidatorProtocol {
+                    result = input.validateInput(validator)
+                } else {
+                    let value: AnyObject? = form.valueForInput(inputID)
+                    result = validator.validate(value)
+                }
+                if !result.valid {
+                    return (result.valid, inputID, result.error)
                 }
             } else {
                 println("Validation for fieldID \(aValidator) impossible.")

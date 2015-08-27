@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TALinksInput: TATextInput, TAAddLinkControllerDelegate {
+class TALinksInput: TATextInput, TAInputValidatorProtocol, TAAddLinkControllerDelegate {
 
     var linksWrapper: UIView = UIView(forAutoLayout: ())
     var linksWrapperBottomConstraint: NSLayoutConstraint!
@@ -58,10 +58,22 @@ class TALinksInput: TATextInput, TAAddLinkControllerDelegate {
     
     
     override func inputValue() -> AnyObject? {
-        let values: [String] = []
+        return links
+    }
+    
+    
+    func validateInput(inputValidator: TAInputValidator) -> (Bool, NSError?) {
+        
+        var valid = inputValidator.validateMandatory(links)
+        
         for link in links {
-            values.append(link)
+            if !inputValidator.validateURL(link.url) {
+                let error = NSError(domain: kTAFormErrorDomain, code: kFormErrorURLInvalid, userInfo: inputValidator.userInfo(NSLocalizedString("URL is not valid", comment: ""), localizedFailureReason: NSLocalizedString("URL is not valid", comment: "URL validation")))
+                return (false, error)
+            }
         }
+        
+        return (valid, nil)
     }
     
     

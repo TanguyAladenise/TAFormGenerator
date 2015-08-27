@@ -12,6 +12,7 @@ class TADateInput: TADropdownInput {
 
     var datePickerMode: UIDatePickerMode?
     
+    var datePicker: UIDatePicker?
     
     // MARK: - Lifecycle
     
@@ -28,15 +29,22 @@ class TADateInput: TADropdownInput {
     // FIXME: - Delegate protocol
     
     override func viewForDropdown() -> UIView? {
-        let picker        = UIDatePicker(forAutoLayout: ())
+        datePicker = UIDatePicker(forAutoLayout: ())
         if let mode = datePickerMode {
-            picker.datePickerMode = mode
+            datePicker!.datePickerMode = mode
         }
-        picker.addTarget(self, action: "valueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        datePicker!.addTarget(self, action: "valueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
-        return picker
+        return datePicker
     }
 
+    
+    // MARK: Input protocol
+    
+    
+    override func inputValue() -> AnyObject? {
+        return datePicker?.date
+    }
     
     // MARK: UI picker events
     

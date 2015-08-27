@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TAStepperInput: UIView {
+class TAStepperInput: UIView, TAInputProtocol {
 
     // UI
     private let label: UILabel! = UILabel()
@@ -86,6 +86,14 @@ class TAStepperInput: UIView {
         var longPressureIncrease = UILongPressGestureRecognizer(target: self, action: "longPress:")
         longPressureIncrease.minimumPressDuration = 0.2
         increaseBtn.addGestureRecognizer(longPressureIncrease)
+    }
+    
+    
+    // MARK: - Input protocol
+    
+    
+    func inputValue() -> AnyObject? {
+        return label.text == placeholder ? nil : label.text
     }
 
     

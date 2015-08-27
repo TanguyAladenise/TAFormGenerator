@@ -11,7 +11,6 @@ import UIKit
 class TADropdownInput: TATextInput {
 
     var menuWrapper: UIView?
-    var picker: UIPickerView?
     
     var menuIsCollapsed: Bool = true
     var menuHeightConstraint: NSLayoutConstraint!
@@ -90,8 +89,6 @@ class TADropdownInput: TATextInput {
             menuWrapper!.addSubview(view)
             view.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
         }
-            
-
     }
     
     /**

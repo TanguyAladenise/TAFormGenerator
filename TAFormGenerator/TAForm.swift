@@ -46,10 +46,26 @@ class TAForm {
     :returns: Value of input
     */
     func valueForInput(inputID: String) -> AnyObject? {
-        if let input = formSubviews[inputID] as? TAInputProtocol {
+        if let input = inputWithID(inputID) {
             // FIXME: - to be removed
             println(input.inputValue())
             return input.inputValue()
+        } else {
+            return nil
+        }
+    }
+    
+    
+    /**
+    Return input with given ID
+    
+    :param: inputID to find input
+    
+    :returns: Return an input that must conform to TAInputProtocol
+    */
+    func inputWithID(inputID: String) -> TAInputProtocol? {
+        if let input = formSubviews[inputID] as? TAInputProtocol {
+            return input
         } else {
             println("Validation for fieldID \(inputID) impossible. Input doest not conform to protocol TAInputProtocol")
             return nil

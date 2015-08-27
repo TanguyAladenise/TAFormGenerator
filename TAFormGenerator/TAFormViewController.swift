@@ -11,7 +11,7 @@ import UIKit
 
 @objc protocol TAFormViewControllerDelegate: class {
     optional func formShouldBeValidated(formViewController: TAFormViewController) -> Bool
-    func formDidNotValidate(formViewController: TAFormViewController)
+    func formDidNotValidate(formViewController: TAFormViewController, error: NSError?)
     func formDidValidate(formViewController: TAFormViewController)
 }
 
@@ -120,14 +120,11 @@ class TAFormViewController: UIViewController {
             if valid {
                 delegate?.formDidValidate(self)
             } else {
-                delegate?.formDidNotValidate(self)
+                delegate?.formDidNotValidate(self, error: error)
             }
-            println((valid, fieldID, error))
         } else {
             delegate?.formDidValidate(self)
         }
         
     }
-    
-    
 }

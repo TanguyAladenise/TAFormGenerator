@@ -58,3 +58,6 @@ let kFormErrorBirthdateInvalid = -116
 
 
 let kImageErrorAvatarFileSize = -117
+
+
+let kFormErrorURLInvalid = -118

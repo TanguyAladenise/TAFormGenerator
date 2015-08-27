@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ViewController: TAFormViewController {
+class ViewController: TAFormViewController, TAFormViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        delegate = self
         
         formBuilder.addSection(TADefaultFormHeaderView(headerTitle: "test"), withID: "Header1")
         formBuilder.addSection(TADefaultFormHeaderView(headerTitle: "test"), withID: "Header2")
@@ -50,9 +52,23 @@ class ViewController: TAFormViewController {
     
         var validator         = TAInputValidator()
         validator.isMandatory = true
-        formValidator.addValidator("links", inputValidator: validator)
+        formValidator.addValidator("Stepper", inputValidator: validator)
+        
+        
+        var validator2 = TAInputValidator()
+        validator.isMandatory = true
+        formValidator.addValidator("image", inputValidator: validator)
     }
     
+    
+    func formDidValidate(formViewController: TAFormViewController) {
+        println("is valid")
+    }
+    
+    func formDidNotValidate(formViewController: TAFormViewController, error: NSError?) {
+        println("is NOT valid")
+        println(error)
+    }
     
     deinit {
         println("deinit form")

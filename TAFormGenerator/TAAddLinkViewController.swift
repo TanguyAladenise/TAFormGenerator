@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TALink: NSObject {
     var type: String!
     var url: String!
