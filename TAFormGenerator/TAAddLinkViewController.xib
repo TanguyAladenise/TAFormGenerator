@@ -14,7 +14,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLinkViewController" customModule="TAFormGenerator" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TAAddLinkViewController" customModule="TAFormGenerator" customModuleProvider="target">
             <connections>
                 <outlet property="formWrapper" destination="gJp-M9-tWC" id="Jhi-bk-0Jk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

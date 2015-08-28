@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class TAMapInput: UIView, TAInputProtocol, TAInputValidatorProtocol, MKMapViewDelegate {
+class TAMapInput: UIView, TAInputProtocol, TAInputValidatorProtocol, MKMapViewDelegate, TAMapViewPickerControllerDelegate {
 
     private let mapView: MKMapView! = MKMapView(forAutoLayout: ())
     
@@ -18,6 +18,7 @@ class TAMapInput: UIView, TAInputProtocol, TAInputValidatorProtocol, MKMapViewDe
     
     private var didSetupConstraints: Bool = false
     
+    var selectedLocation: CLLocation?
     
     // MARK: - Lifecycle
     
@@ -57,12 +58,15 @@ class TAMapInput: UIView, TAInputProtocol, TAInputValidatorProtocol, MKMapViewDe
     
     
     func inputValue() -> AnyObject? {
-        return nil
+        return selectedLocation
     }
     
     
     func validateInput(inputValidator: TAInputValidator) -> (Bool, NSError?) {
-        return (false, nil)
+        var valid = inputValidator.validateMandatory(selectedLocation)
+        var error = inputValidator.error
+
+        return (valid, error)
     }
     
     
@@ -70,13 +74,38 @@ class TAMapInput: UIView, TAInputProtocol, TAInputValidatorProtocol, MKMapViewDe
     
     
     func tapHandler() {
-        println("open map")
-        let vc      = MapViewPickerController(nibName: "MapViewPickerController", bundle: nil)
+        let vc      = TAMapViewPickerController(nibName: "TAMapViewPickerController", bundle: nil)
+        vc.delegate = self
         
         // Use target for presenting controller
         if let target = target {
             target.presentViewController(vc, animated: true, completion: nil)
         }
+    }
+    
+    
+    // MARK: - Map picker delegate
+    
+    
+    func mapViewPickerControllerDidCancel(picker: TAMapViewPickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func mapViewPickerController(picker: TAMapViewPickerController, didFinishPickerLocation location: CLLocation?) {
+        picker.dismissViewControllerAnimated(true, completion: { () -> Void in
+            if let loc = location {
+                self.selectedLocation = loc
+                var annotation        = MKPointAnnotation()
+                annotation.coordinate = loc.coordinate
+                
+                self.mapView.removeAnnotations(self.mapView.annotations)
+                self.mapView.addAnnotation(annotation)
+                
+                let region = MKCoordinateRegion(center: loc.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+                self.mapView.setRegion(region, animated: true)
+            }
+        })
     }
     
     

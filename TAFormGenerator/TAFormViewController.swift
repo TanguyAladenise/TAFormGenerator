@@ -70,6 +70,7 @@ class TAFormViewController: UIViewController {
         view.addSubview(scrollView)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "endEditing:")
+        tapGesture.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapGesture)
         
         scrollView.addSubview(formView)

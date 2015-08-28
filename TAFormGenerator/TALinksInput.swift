@@ -65,15 +65,16 @@ class TALinksInput: TATextInput, TAInputValidatorProtocol, TAAddLinkControllerDe
     func validateInput(inputValidator: TAInputValidator) -> (Bool, NSError?) {
         
         var valid = inputValidator.validateMandatory(links)
+        var error = inputValidator.error
         
         for link in links {
             if !inputValidator.validateURL(link.url) {
-                let error = NSError(domain: kTAFormErrorDomain, code: kFormErrorURLInvalid, userInfo: inputValidator.userInfo(NSLocalizedString("URL is not valid", comment: ""), localizedFailureReason: NSLocalizedString("URL is not valid", comment: "URL validation")))
+                error = NSError(domain: kTAFormErrorDomain, code: kFormErrorURLInvalid, userInfo: inputValidator.userInfo(NSLocalizedString("URL is not valid", comment: ""), localizedFailureReason: NSLocalizedString("URL is not valid", comment: "URL validation")))
                 return (false, error)
             }
         }
         
-        return (valid, nil)
+        return (valid, error)
     }
     
     
@@ -84,7 +85,7 @@ class TALinksInput: TATextInput, TAInputValidatorProtocol, TAAddLinkControllerDe
     Show the add link modal
     */
     func addLink() {
-        let vc      = TAAddLinkViewController(nibName: "AddLinkViewController", bundle: nil)
+        let vc      = TAAddLinkViewController(nibName: "TAAddLinkViewController", bundle: nil)
         vc.delegate = self
         
         // Use target for presenting controller

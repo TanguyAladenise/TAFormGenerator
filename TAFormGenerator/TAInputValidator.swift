@@ -44,7 +44,7 @@ class TAInputValidator {
     
     private var value: AnyObject!
     
-    private var error: NSError?
+    var error: NSError?
     
     
     /**

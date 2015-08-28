@@ -96,4 +96,9 @@ class TAInputBuilder {
     class func mapInput(coordinate: String?, target: UIViewController) -> TAMapInput {
         return TAMapInput(coordinate: nil, target: target)
     }
+    
+    
+    class func googlePlaceInput(placeholder: String) -> TAGooglePlaceInput {
+        return TAGooglePlaceInput(placeholder: placeholder)
+    }
 }

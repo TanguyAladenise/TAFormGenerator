@@ -15,6 +15,7 @@ class TADropdownInput: TATextInput {
     var menuIsCollapsed: Bool = true
     var menuHeightConstraint: NSLayoutConstraint!
     
+    var isEditable = false
     
     // MARK: - Lifecycle
     
@@ -24,23 +25,38 @@ class TADropdownInput: TATextInput {
         
         self.setTranslatesAutoresizingMaskIntoConstraints(false)
         
-        let imageView           = UIImageView(image: UIImage(named: "icoExpand"))
-        textField.rightView     = imageView
+        let rightView = UIButton.buttonWithType(.Custom) as! UIButton
+        rightView.setImage(UIImage(named: "icoExpand"), forState: .Normal)
+        rightView.setImage(UIImage(named: "icoCollapse"), forState: .Selected)
+        rightView.addTarget(self, action: "openMenuBtnPressed", forControlEvents: .TouchUpInside)
+        rightView.frame     = CGRectMake(0, 0, 50, 50)
+        textField.rightView = rightView
+
         textField.rightViewMode = UITextFieldViewMode.Always
     }
     
     
-    // MARk: - TextField delegate
+    // MARK: - UI Actions
     
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func openMenuBtnPressed() {
         if menuIsCollapsed {
             openMenu()
         } else {
             closeMenu()
         }
+    }
+    
+    
+    // MARK: - TextField delegate
+    
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if !isEditable || menuIsCollapsed {
+            openMenuBtnPressed()
+        }
         
-        return false
+        return isEditable
     }
     
     
@@ -63,6 +79,7 @@ class TADropdownInput: TATextInput {
             menuHeightConstraint.constant = 0
             layoutIfNeeded()
             menuHeightConstraint.constant = 160
+            (textField.rightView as! UIButton).selected = true
             UIView.animateWithDuration(0.2, animations: { () -> Void in
                 self.layoutIfNeeded()
             }, completion: { (completion: Bool) -> Void in
@@ -76,6 +93,7 @@ class TADropdownInput: TATextInput {
         menuHeightConstraint.constant = 0
         self.layoutIfNeeded()
         self.menuIsCollapsed = true
+        (textField.rightView as! UIButton).selected = false
     }
     
     
